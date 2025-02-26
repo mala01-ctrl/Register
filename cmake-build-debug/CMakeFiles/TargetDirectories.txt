@@ -1,0 +1,9 @@
+C:/Software/RegisterQt/cmake-build-debug/CMakeFiles/RegisterQt.dir
+C:/Software/RegisterQt/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Software/RegisterQt/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+C:/Software/RegisterQt/cmake-build-debug/CMakeFiles/list_install_components.dir
+C:/Software/RegisterQt/cmake-build-debug/CMakeFiles/install.dir
+C:/Software/RegisterQt/cmake-build-debug/CMakeFiles/install/local.dir
+C:/Software/RegisterQt/cmake-build-debug/CMakeFiles/install/strip.dir
+C:/Software/RegisterQt/cmake-build-debug/CMakeFiles/RegisterQt_autogen_timestamp_deps.dir
+C:/Software/RegisterQt/cmake-build-debug/CMakeFiles/RegisterQt_autogen.dir
