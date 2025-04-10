@@ -237,6 +237,7 @@ RegisterQt_autogen/timestamp: \
 	C:/Program\ Files/JetBrains/CLion\ 2024.3.1/bin/cmake/win/x64/share/cmake-3.30/Modules/Platform/Windows-windres.cmake \
 	C:/Program\ Files/JetBrains/CLion\ 2024.3.1/bin/cmake/win/x64/share/cmake-3.30/Modules/Platform/Windows.cmake \
 	C:/Program\ Files/JetBrains/CLion\ 2024.3.1/bin/cmake/win/x64/share/cmake-3.30/Modules/Platform/WindowsPaths.cmake \
+	C:/Qt/6.8.1/mingw_64/include/QtCore/QVector \
 	C:/Qt/6.8.1/mingw_64/include/QtCore/q20functional.h \
 	C:/Qt/6.8.1/mingw_64/include/QtCore/q20iterator.h \
 	C:/Qt/6.8.1/mingw_64/include/QtCore/q20memory.h \
@@ -256,6 +257,7 @@ RegisterQt_autogen/timestamp: \
 	C:/Qt/6.8.1/mingw_64/include/QtCore/qbytearrayalgorithms.h \
 	C:/Qt/6.8.1/mingw_64/include/QtCore/qbytearraylist.h \
 	C:/Qt/6.8.1/mingw_64/include/QtCore/qbytearrayview.h \
+	C:/Qt/6.8.1/mingw_64/include/QtCore/qcalendar.h \
 	C:/Qt/6.8.1/mingw_64/include/QtCore/qchar.h \
 	C:/Qt/6.8.1/mingw_64/include/QtCore/qcompare.h \
 	C:/Qt/6.8.1/mingw_64/include/QtCore/qcompare_impl.h \
@@ -269,6 +271,7 @@ RegisterQt_autogen/timestamp: \
 	C:/Qt/6.8.1/mingw_64/include/QtCore/qcontiguouscache.h \
 	C:/Qt/6.8.1/mingw_64/include/QtCore/qdarwinhelpers.h \
 	C:/Qt/6.8.1/mingw_64/include/QtCore/qdatastream.h \
+	C:/Qt/6.8.1/mingw_64/include/QtCore/qdatetime.h \
 	C:/Qt/6.8.1/mingw_64/include/QtCore/qdebug.h \
 	C:/Qt/6.8.1/mingw_64/include/QtCore/qendian.h \
 	C:/Qt/6.8.1/mingw_64/include/QtCore/qexceptionhandling.h \
@@ -288,6 +291,7 @@ RegisterQt_autogen/timestamp: \
 	C:/Qt/6.8.1/mingw_64/include/QtCore/qlatin1stringview.h \
 	C:/Qt/6.8.1/mingw_64/include/QtCore/qline.h \
 	C:/Qt/6.8.1/mingw_64/include/QtCore/qlist.h \
+	C:/Qt/6.8.1/mingw_64/include/QtCore/qlocale.h \
 	C:/Qt/6.8.1/mingw_64/include/QtCore/qlogging.h \
 	C:/Qt/6.8.1/mingw_64/include/QtCore/qmalloc.h \
 	C:/Qt/6.8.1/mingw_64/include/QtCore/qmap.h \
@@ -354,6 +358,7 @@ RegisterQt_autogen/timestamp: \
 	C:/Qt/6.8.1/mingw_64/include/QtCore/qutf8stringview.h \
 	C:/Qt/6.8.1/mingw_64/include/QtCore/qvariant.h \
 	C:/Qt/6.8.1/mingw_64/include/QtCore/qvarlengtharray.h \
+	C:/Qt/6.8.1/mingw_64/include/QtCore/qvector.h \
 	C:/Qt/6.8.1/mingw_64/include/QtCore/qversiontagging.h \
 	C:/Qt/6.8.1/mingw_64/include/QtCore/qxptype_traits.h \
 	C:/Qt/6.8.1/mingw_64/include/QtCore/qyieldcpu.h \
@@ -538,5 +543,7 @@ RegisterQt_autogen/timestamp: \
 	C:/Software/RegisterQt/cmake-build-debug/CMakeFiles/3.30.5/CMakeSystem.cmake \
 	C:/Software/RegisterQt/cmake-build-debug/RegisterQt_autogen/moc_predefs.h \
 	C:/Software/RegisterQt/main.cpp \
-	C:/Software/RegisterQt/Register.ui \
+	C:/Software/RegisterQt/mainwindow.cpp \
+	C:/Software/RegisterQt/mainwindow.h \
+	C:/Software/RegisterQt/mainwindow.ui \
 	C:/Program\ Files/JetBrains/CLion\ 2024.3.1/bin/cmake/win/x64/bin/cmake.exe

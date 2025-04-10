@@ -1,7 +1,7 @@
 CMakeFiles/RegisterQt.dir/RegisterQt_autogen/mocs_compilation.cpp.obj: \
  C:\Software\RegisterQt\cmake-build-debug\RegisterQt_autogen\mocs_compilation.cpp \
- C:\Software\RegisterQt\cmake-build-debug\RegisterQt_autogen\EWIEGA46WW/moc_Register.cpp \
- C:/Software/RegisterQt/Register.h \
+ C:\Software\RegisterQt\cmake-build-debug\RegisterQt_autogen\EWIEGA46WW/moc_mainwindow.cpp \
+ C:/Software/RegisterQt/mainwindow.h \
  C:/Qt/6.8.1/mingw_64/include/QtWidgets/QMainWindow \
  C:/Qt/6.8.1/mingw_64/include/QtWidgets/qmainwindow.h \
  C:/Qt/6.8.1/mingw_64/include/QtWidgets/qtwidgetsglobal.h \
@@ -368,4 +368,11 @@ CMakeFiles/RegisterQt.dir/RegisterQt_autogen/mocs_compilation.cpp.obj: \
  C:/Qt/6.8.1/mingw_64/include/QtGui/qcursor.h \
  C:/Qt/6.8.1/mingw_64/include/QtGui/qbitmap.h \
  C:/Qt/6.8.1/mingw_64/include/QtWidgets/qtabwidget.h \
+ C:/Software/RegisterQt/Register.h \
+ C:/Qt/6.8.1/mingw_64/include/QtCore/QVector \
+ C:/Qt/6.8.1/mingw_64/include/QtCore/qvector.h \
+ C:/Software/RegisterQt/Activity.h \
+ C:/Qt/6.8.1/mingw_64/include/QtCore/qdatetime.h \
+ C:/Qt/6.8.1/mingw_64/include/QtCore/qcalendar.h \
+ C:/Qt/6.8.1/mingw_64/include/QtCore/qlocale.h \
  C:/Qt/6.8.1/mingw_64/include/QtCore/qtmochelpers.h

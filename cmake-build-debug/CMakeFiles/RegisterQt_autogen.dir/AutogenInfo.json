@@ -275,6 +275,12 @@
 			"MU",
 			"EWIEGA46WW/moc_Register.cpp",
 			null
+		],
+		[
+			"C:/Software/RegisterQt/mainwindow.h",
+			"MU",
+			"EWIEGA46WW/moc_mainwindow.cpp",
+			null
 		]
 	],
 	"HEADER_EXTENSIONS" : [ "h", "hh", "h++", "hm", "hpp", "hxx", "in", "txx" ],
@@ -350,7 +356,8 @@
 	[
 		[ "C:/Software/RegisterQt/Activity.cpp", "MU", null ],
 		[ "C:/Software/RegisterQt/Register.cpp", "MU", null ],
-		[ "C:/Software/RegisterQt/main.cpp", "MU", null ]
+		[ "C:/Software/RegisterQt/main.cpp", "MU", null ],
+		[ "C:/Software/RegisterQt/mainwindow.cpp", "MU", null ]
 	],
 	"UIC_OPTIONS" : [],
 	"UIC_SEARCH_PATHS" : [],
