@@ -7,7 +7,7 @@
 				{
 					"build" : ".",
 					"hasInstallRule" : true,
-					"jsonFile" : "directory-.-Debug-886506c0c3c1b755d979.json",
+					"jsonFile" : "directory-.-Debug-0b1ab46a7d53e431a446.json",
 					"minimumCMakeVersion" : 
 					{
 						"string" : "3.16"
@@ -44,7 +44,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "RegisterQt::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-RegisterQt-Debug-7bfce00d1402b2a98dd2.json",
+					"jsonFile" : "target-RegisterQt-Debug-cbfe0954cf15a8d809ec.json",
 					"name" : "RegisterQt",
 					"projectIndex" : 0
 				},

@@ -10,6 +10,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/RegisterQt.dir/RegisterQt_autogen/mocs_compilation.cpp.obj.d"
   "CMakeFiles/RegisterQt.dir/main.cpp.obj"
   "CMakeFiles/RegisterQt.dir/main.cpp.obj.d"
+  "CMakeFiles/RegisterQt.dir/mainwindow.cpp.obj"
+  "CMakeFiles/RegisterQt.dir/mainwindow.cpp.obj.d"
   "RegisterQt.exe"
   "RegisterQt.exe.manifest"
   "RegisterQt.pdb"

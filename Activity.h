@@ -5,38 +5,38 @@
 #ifndef ACTIVITY_H
 #define ACTIVITY_H
 
+#include <qdatetime.h>
 #include <string>
 
 
-
 class Activity {
-
 public:
-    Activity(const std::string &description, const std::string& startDateTime, const std::string& endDateTime, int id);
+    Activity(const QString &description, const QDateTime &startDateTime, const QDateTime &endDateTime);
 
-    int getId() const{
-        return id;
-    }
-
-    std::string getDescription() const {
+    QString getDescription() const {
         return description;
     }
 
-    std::string getStartDateTime() const {
+    QDateTime getStartDateTime() const {
         return startDateTime;
     }
 
-    std::string getEndDateTime() const {
+    QDateTime getEndDateTime() const {
         return endDateTime;
     }
 
-private:
-    int id;
-    std::string description;
-    std::string startDateTime;
-    std::string endDateTime;
-};
+    QString toString() const {
+        return QString("[%1 - %2] %3")
+                .arg(startDateTime.toString("yyyy-MM-dd HH:mm"))
+                .arg(endDateTime.toString("yyyy-MM-dd HH:mm"))
+                .arg(description);
+    }
 
+private:
+    QString description;
+    QDateTime startDateTime;
+    QDateTime endDateTime;
+};
 
 
 #endif //ACTIVITY_H
