@@ -1,5 +1,5 @@
 CMakeFiles/RegisterQt.dir/main.cpp.obj: C:\Software\RegisterQt\main.cpp \
- C:\Software\RegisterQt\Register.h \
+ C:\Software\RegisterQt\mainwindow.h \
  C:/Qt/6.8.1/mingw_64/include/QtWidgets/QMainWindow \
  C:/Qt/6.8.1/mingw_64/include/QtWidgets/qmainwindow.h \
  C:/Qt/6.8.1/mingw_64/include/QtWidgets/qtwidgetsglobal.h \
@@ -366,6 +366,13 @@ CMakeFiles/RegisterQt.dir/main.cpp.obj: C:\Software\RegisterQt\main.cpp \
  C:/Qt/6.8.1/mingw_64/include/QtGui/qcursor.h \
  C:/Qt/6.8.1/mingw_64/include/QtGui/qbitmap.h \
  C:/Qt/6.8.1/mingw_64/include/QtWidgets/qtabwidget.h \
+ C:\Software\RegisterQt\Register.h \
+ C:/Qt/6.8.1/mingw_64/include/QtCore/QVector \
+ C:/Qt/6.8.1/mingw_64/include/QtCore/qvector.h \
+ C:\Software\RegisterQt\Activity.h \
+ C:/Qt/6.8.1/mingw_64/include/QtCore/qdatetime.h \
+ C:/Qt/6.8.1/mingw_64/include/QtCore/qcalendar.h \
+ C:/Qt/6.8.1/mingw_64/include/QtCore/qlocale.h \
  C:/Qt/6.8.1/mingw_64/include/QtWidgets/QApplication \
  C:/Qt/6.8.1/mingw_64/include/QtWidgets/qapplication.h \
  C:/Qt/6.8.1/mingw_64/include/QtCore/qcoreapplication.h \
@@ -377,5 +384,4 @@ CMakeFiles/RegisterQt.dir/main.cpp.obj: C:\Software\RegisterQt\main.cpp \
  C:/Qt/6.8.1/mingw_64/include/QtCore/qcoreapplication_platform.h \
  C:/Qt/6.8.1/mingw_64/include/QtGui/qguiapplication.h \
  C:/Qt/6.8.1/mingw_64/include/QtGui/qinputmethod.h \
- C:/Qt/6.8.1/mingw_64/include/QtCore/qlocale.h \
  C:/Qt/6.8.1/mingw_64/include/QtGui/qguiapplication_platform.h

@@ -367,6 +367,13 @@ CMakeFiles/RegisterQt.dir/mainwindow.cpp.obj: \
  C:/Qt/6.8.1/mingw_64/include/QtGui/qcursor.h \
  C:/Qt/6.8.1/mingw_64/include/QtGui/qbitmap.h \
  C:/Qt/6.8.1/mingw_64/include/QtWidgets/qtabwidget.h \
+ C:\Software\RegisterQt\Register.h \
+ C:/Qt/6.8.1/mingw_64/include/QtCore/QVector \
+ C:/Qt/6.8.1/mingw_64/include/QtCore/qvector.h \
+ C:\Software\RegisterQt\Activity.h \
+ C:/Qt/6.8.1/mingw_64/include/QtCore/qdatetime.h \
+ C:/Qt/6.8.1/mingw_64/include/QtCore/qcalendar.h \
+ C:/Qt/6.8.1/mingw_64/include/QtCore/qlocale.h \
  C:/Software/RegisterQt/cmake-build-debug/RegisterQt_autogen/include/ui_mainwindow.h \
  C:/Qt/6.8.1/mingw_64/include/QtCore/QVariant \
  C:/Qt/6.8.1/mingw_64/include/QtCore/qvariant.h \
@@ -383,13 +390,11 @@ CMakeFiles/RegisterQt.dir/mainwindow.cpp.obj: \
  C:/Qt/6.8.1/mingw_64/include/QtCore/qcoreapplication_platform.h \
  C:/Qt/6.8.1/mingw_64/include/QtGui/qguiapplication.h \
  C:/Qt/6.8.1/mingw_64/include/QtGui/qinputmethod.h \
- C:/Qt/6.8.1/mingw_64/include/QtCore/qlocale.h \
  C:/Qt/6.8.1/mingw_64/include/QtGui/qguiapplication_platform.h \
  C:/Qt/6.8.1/mingw_64/include/QtWidgets/QDateEdit \
  C:/Qt/6.8.1/mingw_64/include/QtWidgets/qdatetimeedit.h \
  C:/Qt/6.8.1/mingw_64/include/QtCore/qtimezone.h \
  C:/Qt/6.8.1/mingw_64/include/QtCore/qdatetime.h \
- C:/Qt/6.8.1/mingw_64/include/QtCore/qcalendar.h \
  C:/Qt/6.8.1/mingw_64/include/QtWidgets/qabstractspinbox.h \
  C:/Qt/6.8.1/mingw_64/include/QtGui/qvalidator.h \
  C:/Qt/6.8.1/mingw_64/include/QtCore/qregularexpression.h \
@@ -433,4 +438,6 @@ CMakeFiles/RegisterQt.dir/mainwindow.cpp.obj: \
  C:/Qt/6.8.1/mingw_64/include/QtGui/qtextformat.h \
  C:/Qt/6.8.1/mingw_64/include/QtGui/qpen.h \
  C:/Qt/6.8.1/mingw_64/include/QtWidgets/QWidget \
- C:/Qt/6.8.1/mingw_64/include/QtWidgets/qwidget.h
+ C:/Qt/6.8.1/mingw_64/include/QtWidgets/qwidget.h \
+ C:/Qt/6.8.1/mingw_64/include/QtCore/QString \
+ C:/Qt/6.8.1/mingw_64/include/QtCore/qstring.h
