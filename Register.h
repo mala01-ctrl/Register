@@ -1,23 +1,29 @@
-#ifndef MAINWINDOW_H
-#define MAINWINDOW_H
+//
+// Created by Lorenzo Malavolti on 10/04/2025.
+//
 
-#include <QMainWindow>
+#ifndef REGISTER_H
+#define REGISTER_H
+#include <QVector>
 
-QT_BEGIN_NAMESPACE
-namespace Ui {
-class MainWindow;
-}
-QT_END_NAMESPACE
+#include "Activity.h"
 
-class Register : public QMainWindow
-{
-    Q_OBJECT
+
+class Register {
 
 public:
-    explicit Register(QWidget *parent = nullptr);
-    ~Register();
+
+    void addActivity(const Activity& activity);
+
+    bool removeActivity(int index);
+
+    void clearAll();
 
 private:
-    Ui::MainWindow *ui;
+    QVector<Activity> activities;
+
 };
-#endif // MAINWINDOW_H
+
+
+
+#endif //REGISTER_H

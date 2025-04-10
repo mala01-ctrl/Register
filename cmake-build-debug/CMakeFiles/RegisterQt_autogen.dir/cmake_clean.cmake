@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/RegisterQt_autogen"
-  "RegisterQt_autogen/include/ui_Register.h"
+  "RegisterQt_autogen/include/ui_mainwindow.h"
   "RegisterQt_autogen/mocs_compilation.cpp"
   "RegisterQt_autogen/timestamp"
 )

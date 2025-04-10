@@ -14,11 +14,13 @@ find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets)
 
 set(PROJECT_SOURCES
         main.cpp
-        Register.cpp
-        Register.h
-        Register.ui
+        mainwindow.cpp
+        mainwindow.h
+        mainwindow.ui
         Activity.cpp
         Activity.h
+        Register.cpp
+        Register.h
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)

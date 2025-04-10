@@ -10,6 +10,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "" "RegisterQt_autogen/timestamp" "custom" "RegisterQt_autogen/deps"
   "C:/Software/RegisterQt/Activity.cpp" "CMakeFiles/RegisterQt.dir/Activity.cpp.obj" "gcc" "CMakeFiles/RegisterQt.dir/Activity.cpp.obj.d"
+  "C:/Software/RegisterQt/mainwindow.cpp" "CMakeFiles/RegisterQt.dir/MainWindow.cpp.obj" "gcc" "CMakeFiles/RegisterQt.dir/MainWindow.cpp.obj.d"
   "C:/Software/RegisterQt/Register.cpp" "CMakeFiles/RegisterQt.dir/Register.cpp.obj" "gcc" "CMakeFiles/RegisterQt.dir/Register.cpp.obj.d"
   "C:/Software/RegisterQt/cmake-build-debug/RegisterQt_autogen/mocs_compilation.cpp" "CMakeFiles/RegisterQt.dir/RegisterQt_autogen/mocs_compilation.cpp.obj" "gcc" "CMakeFiles/RegisterQt.dir/RegisterQt_autogen/mocs_compilation.cpp.obj.d"
   "C:/Software/RegisterQt/main.cpp" "CMakeFiles/RegisterQt.dir/main.cpp.obj" "gcc" "CMakeFiles/RegisterQt.dir/main.cpp.obj.d"

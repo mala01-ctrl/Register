@@ -206,6 +206,7 @@ C:/Software/RegisterQt/cmake-build-debug/RegisterQt_autogen/EWIEGA46WW/moc_mainw
   C:/MinGW/x86_64-w64-mingw32/include/time.h \
   C:/MinGW/x86_64-w64-mingw32/include/vadefs.h \
   C:/MinGW/x86_64-w64-mingw32/include/wchar.h \
+  C:/Qt/6.8.1/mingw_64/include/QtCore/QVector \
   C:/Qt/6.8.1/mingw_64/include/QtCore/q20functional.h \
   C:/Qt/6.8.1/mingw_64/include/QtCore/q20iterator.h \
   C:/Qt/6.8.1/mingw_64/include/QtCore/q20memory.h \
@@ -225,6 +226,7 @@ C:/Software/RegisterQt/cmake-build-debug/RegisterQt_autogen/EWIEGA46WW/moc_mainw
   C:/Qt/6.8.1/mingw_64/include/QtCore/qbytearrayalgorithms.h \
   C:/Qt/6.8.1/mingw_64/include/QtCore/qbytearraylist.h \
   C:/Qt/6.8.1/mingw_64/include/QtCore/qbytearrayview.h \
+  C:/Qt/6.8.1/mingw_64/include/QtCore/qcalendar.h \
   C:/Qt/6.8.1/mingw_64/include/QtCore/qchar.h \
   C:/Qt/6.8.1/mingw_64/include/QtCore/qcompare.h \
   C:/Qt/6.8.1/mingw_64/include/QtCore/qcompare_impl.h \
@@ -238,6 +240,7 @@ C:/Software/RegisterQt/cmake-build-debug/RegisterQt_autogen/EWIEGA46WW/moc_mainw
   C:/Qt/6.8.1/mingw_64/include/QtCore/qcontiguouscache.h \
   C:/Qt/6.8.1/mingw_64/include/QtCore/qdarwinhelpers.h \
   C:/Qt/6.8.1/mingw_64/include/QtCore/qdatastream.h \
+  C:/Qt/6.8.1/mingw_64/include/QtCore/qdatetime.h \
   C:/Qt/6.8.1/mingw_64/include/QtCore/qdebug.h \
   C:/Qt/6.8.1/mingw_64/include/QtCore/qendian.h \
   C:/Qt/6.8.1/mingw_64/include/QtCore/qexceptionhandling.h \
@@ -257,6 +260,7 @@ C:/Software/RegisterQt/cmake-build-debug/RegisterQt_autogen/EWIEGA46WW/moc_mainw
   C:/Qt/6.8.1/mingw_64/include/QtCore/qlatin1stringview.h \
   C:/Qt/6.8.1/mingw_64/include/QtCore/qline.h \
   C:/Qt/6.8.1/mingw_64/include/QtCore/qlist.h \
+  C:/Qt/6.8.1/mingw_64/include/QtCore/qlocale.h \
   C:/Qt/6.8.1/mingw_64/include/QtCore/qlogging.h \
   C:/Qt/6.8.1/mingw_64/include/QtCore/qmalloc.h \
   C:/Qt/6.8.1/mingw_64/include/QtCore/qmap.h \
@@ -323,6 +327,7 @@ C:/Software/RegisterQt/cmake-build-debug/RegisterQt_autogen/EWIEGA46WW/moc_mainw
   C:/Qt/6.8.1/mingw_64/include/QtCore/qutf8stringview.h \
   C:/Qt/6.8.1/mingw_64/include/QtCore/qvariant.h \
   C:/Qt/6.8.1/mingw_64/include/QtCore/qvarlengtharray.h \
+  C:/Qt/6.8.1/mingw_64/include/QtCore/qvector.h \
   C:/Qt/6.8.1/mingw_64/include/QtCore/qversiontagging.h \
   C:/Qt/6.8.1/mingw_64/include/QtCore/qxptype_traits.h \
   C:/Qt/6.8.1/mingw_64/include/QtCore/qyieldcpu.h \
@@ -358,4 +363,6 @@ C:/Software/RegisterQt/cmake-build-debug/RegisterQt_autogen/EWIEGA46WW/moc_mainw
   C:/Qt/6.8.1/mingw_64/include/QtWidgets/qtwidgets-config.h \
   C:/Qt/6.8.1/mingw_64/include/QtWidgets/qtwidgetsexports.h \
   C:/Qt/6.8.1/mingw_64/include/QtWidgets/qtwidgetsglobal.h \
-  C:/Qt/6.8.1/mingw_64/include/QtWidgets/qwidget.h
+  C:/Qt/6.8.1/mingw_64/include/QtWidgets/qwidget.h \
+  C:/Software/RegisterQt/Activity.h \
+  C:/Software/RegisterQt/Register.h
