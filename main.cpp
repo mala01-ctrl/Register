@@ -5,7 +5,9 @@
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
-    MainWindow w;
+    Register* reg = new Register();
+    RegisterController* controller = new RegisterController(reg);
+    MainWindow w(reg, controller);
     w.show();
     return a.exec();
 }

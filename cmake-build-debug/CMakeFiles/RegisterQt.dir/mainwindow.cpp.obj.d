@@ -367,13 +367,6 @@ CMakeFiles/RegisterQt.dir/mainwindow.cpp.obj: \
  C:/Qt/6.8.1/mingw_64/include/QtGui/qcursor.h \
  C:/Qt/6.8.1/mingw_64/include/QtGui/qbitmap.h \
  C:/Qt/6.8.1/mingw_64/include/QtWidgets/qtabwidget.h \
- C:\Software\RegisterQt\Register.h \
- C:/Qt/6.8.1/mingw_64/include/QtCore/QVector \
- C:/Qt/6.8.1/mingw_64/include/QtCore/qvector.h \
- C:\Software\RegisterQt\Activity.h \
- C:/Qt/6.8.1/mingw_64/include/QtCore/qdatetime.h \
- C:/Qt/6.8.1/mingw_64/include/QtCore/qcalendar.h \
- C:/Qt/6.8.1/mingw_64/include/QtCore/qlocale.h \
  C:/Software/RegisterQt/cmake-build-debug/RegisterQt_autogen/include/ui_mainwindow.h \
  C:/Qt/6.8.1/mingw_64/include/QtCore/QVariant \
  C:/Qt/6.8.1/mingw_64/include/QtCore/qvariant.h \
@@ -390,27 +383,22 @@ CMakeFiles/RegisterQt.dir/mainwindow.cpp.obj: \
  C:/Qt/6.8.1/mingw_64/include/QtCore/qcoreapplication_platform.h \
  C:/Qt/6.8.1/mingw_64/include/QtGui/qguiapplication.h \
  C:/Qt/6.8.1/mingw_64/include/QtGui/qinputmethod.h \
+ C:/Qt/6.8.1/mingw_64/include/QtCore/qlocale.h \
  C:/Qt/6.8.1/mingw_64/include/QtGui/qguiapplication_platform.h \
  C:/Qt/6.8.1/mingw_64/include/QtWidgets/QDateEdit \
  C:/Qt/6.8.1/mingw_64/include/QtWidgets/qdatetimeedit.h \
  C:/Qt/6.8.1/mingw_64/include/QtCore/qtimezone.h \
  C:/Qt/6.8.1/mingw_64/include/QtCore/qdatetime.h \
+ C:/Qt/6.8.1/mingw_64/include/QtCore/qcalendar.h \
  C:/Qt/6.8.1/mingw_64/include/QtWidgets/qabstractspinbox.h \
  C:/Qt/6.8.1/mingw_64/include/QtGui/qvalidator.h \
  C:/Qt/6.8.1/mingw_64/include/QtCore/qregularexpression.h \
  C:/Qt/6.8.1/mingw_64/include/QtWidgets/QDateTimeEdit \
- C:/Qt/6.8.1/mingw_64/include/QtWidgets/QLabel \
- C:/Qt/6.8.1/mingw_64/include/QtWidgets/qlabel.h \
- C:/Qt/6.8.1/mingw_64/include/QtWidgets/qframe.h \
- C:/Qt/6.8.1/mingw_64/include/QtGui/qpicture.h \
- C:/Qt/6.8.1/mingw_64/include/QtCore/qiodevice.h \
- C:/Qt/6.8.1/mingw_64/include/QtGui/qtextdocument.h \
- C:/Qt/6.8.1/mingw_64/include/QtCore/qurl.h \
- C:/Qt/6.8.1/mingw_64/include/QtWidgets/QListWidget \
- C:/Qt/6.8.1/mingw_64/include/QtWidgets/qlistwidget.h \
- C:/Qt/6.8.1/mingw_64/include/QtWidgets/qlistview.h \
+ C:/Qt/6.8.1/mingw_64/include/QtWidgets/QHeaderView \
+ C:/Qt/6.8.1/mingw_64/include/QtWidgets/qheaderview.h \
  C:/Qt/6.8.1/mingw_64/include/QtWidgets/qabstractitemview.h \
  C:/Qt/6.8.1/mingw_64/include/QtWidgets/qabstractscrollarea.h \
+ C:/Qt/6.8.1/mingw_64/include/QtWidgets/qframe.h \
  C:/Qt/6.8.1/mingw_64/include/QtCore/qabstractitemmodel.h \
  C:/Qt/6.8.1/mingw_64/include/QtCore/qitemselectionmodel.h \
  C:/Qt/6.8.1/mingw_64/include/QtWidgets/qabstractitemdelegate.h \
@@ -420,6 +408,12 @@ CMakeFiles/RegisterQt.dir/mainwindow.cpp.obj: \
  C:/Qt/6.8.1/mingw_64/include/QtWidgets/qstyle.h \
  C:/Qt/6.8.1/mingw_64/include/QtWidgets/qtabbar.h \
  C:/Qt/6.8.1/mingw_64/include/QtWidgets/qrubberband.h \
+ C:/Qt/6.8.1/mingw_64/include/QtWidgets/QLabel \
+ C:/Qt/6.8.1/mingw_64/include/QtWidgets/qlabel.h \
+ C:/Qt/6.8.1/mingw_64/include/QtGui/qpicture.h \
+ C:/Qt/6.8.1/mingw_64/include/QtCore/qiodevice.h \
+ C:/Qt/6.8.1/mingw_64/include/QtGui/qtextdocument.h \
+ C:/Qt/6.8.1/mingw_64/include/QtCore/qurl.h \
  C:/Qt/6.8.1/mingw_64/include/QtWidgets/QMainWindow \
  C:/Qt/6.8.1/mingw_64/include/QtWidgets/QMenu \
  C:/Qt/6.8.1/mingw_64/include/QtWidgets/qmenu.h \
@@ -431,6 +425,9 @@ CMakeFiles/RegisterQt.dir/mainwindow.cpp.obj: \
  C:/Qt/6.8.1/mingw_64/include/QtWidgets/qabstractbutton.h \
  C:/Qt/6.8.1/mingw_64/include/QtWidgets/QStatusBar \
  C:/Qt/6.8.1/mingw_64/include/QtWidgets/qstatusbar.h \
+ C:/Qt/6.8.1/mingw_64/include/QtWidgets/QTableWidget \
+ C:/Qt/6.8.1/mingw_64/include/QtWidgets/qtablewidget.h \
+ C:/Qt/6.8.1/mingw_64/include/QtWidgets/qtableview.h \
  C:/Qt/6.8.1/mingw_64/include/QtWidgets/QTextEdit \
  C:/Qt/6.8.1/mingw_64/include/QtWidgets/qtextedit.h \
  C:/Qt/6.8.1/mingw_64/include/QtGui/qtextoption.h \
@@ -439,5 +436,12 @@ CMakeFiles/RegisterQt.dir/mainwindow.cpp.obj: \
  C:/Qt/6.8.1/mingw_64/include/QtGui/qpen.h \
  C:/Qt/6.8.1/mingw_64/include/QtWidgets/QWidget \
  C:/Qt/6.8.1/mingw_64/include/QtWidgets/qwidget.h \
+ C:\Software\RegisterQt\Register.h \
+ C:/Qt/6.8.1/mingw_64/include/QtCore/QVector \
+ C:/Qt/6.8.1/mingw_64/include/QtCore/qvector.h \
+ C:\Software\RegisterQt\Activity.h \
+ C:/Qt/6.8.1/mingw_64/include/QtCore/qdatetime.h \
+ C:\Software\RegisterQt\Subject.h C:\Software\RegisterQt\Observer.h \
+ C:\Software\RegisterQt\RegisterController.h \
  C:/Qt/6.8.1/mingw_64/include/QtCore/QString \
  C:/Qt/6.8.1/mingw_64/include/QtCore/qstring.h

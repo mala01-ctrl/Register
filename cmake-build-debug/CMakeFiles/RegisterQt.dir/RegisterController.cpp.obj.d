@@ -1,5 +1,7 @@
-CMakeFiles/RegisterQt.dir/Register.cpp.obj: \
- C:\Software\RegisterQt\Register.cpp C:\Software\RegisterQt\Register.h \
+CMakeFiles/RegisterQt.dir/RegisterController.cpp.obj: \
+ C:\Software\RegisterQt\RegisterController.cpp \
+ C:\Software\RegisterQt\RegisterController.h \
+ C:\Software\RegisterQt\Register.h \
  C:/Qt/6.8.1/mingw_64/include/QtCore/QVector \
  C:/Qt/6.8.1/mingw_64/include/QtCore/qvector.h \
  C:/Qt/6.8.1/mingw_64/include/QtCore/qlist.h \

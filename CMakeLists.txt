@@ -21,6 +21,12 @@ set(PROJECT_SOURCES
         Activity.h
         Register.cpp
         Register.h
+        Observer.cpp
+        Observer.h
+        Subject.cpp
+        Subject.h
+        RegisterController.cpp
+        RegisterController.h
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)

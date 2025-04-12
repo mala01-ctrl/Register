@@ -365,4 +365,7 @@ C:/Software/RegisterQt/cmake-build-debug/RegisterQt_autogen/EWIEGA46WW/moc_mainw
   C:/Qt/6.8.1/mingw_64/include/QtWidgets/qtwidgetsglobal.h \
   C:/Qt/6.8.1/mingw_64/include/QtWidgets/qwidget.h \
   C:/Software/RegisterQt/Activity.h \
-  C:/Software/RegisterQt/Register.h
+  C:/Software/RegisterQt/Observer.h \
+  C:/Software/RegisterQt/Register.h \
+  C:/Software/RegisterQt/RegisterController.h \
+  C:/Software/RegisterQt/Subject.h

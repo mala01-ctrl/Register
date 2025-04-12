@@ -536,8 +536,14 @@ RegisterQt_autogen/timestamp: \
 	C:/Software/RegisterQt/Activity.cpp \
 	C:/Software/RegisterQt/Activity.h \
 	C:/Software/RegisterQt/CMakeLists.txt \
+	C:/Software/RegisterQt/Observer.cpp \
+	C:/Software/RegisterQt/Observer.h \
 	C:/Software/RegisterQt/Register.cpp \
 	C:/Software/RegisterQt/Register.h \
+	C:/Software/RegisterQt/RegisterController.cpp \
+	C:/Software/RegisterQt/RegisterController.h \
+	C:/Software/RegisterQt/Subject.cpp \
+	C:/Software/RegisterQt/Subject.h \
 	C:/Software/RegisterQt/cmake-build-debug/CMakeFiles/3.30.5/CMakeCXXCompiler.cmake \
 	C:/Software/RegisterQt/cmake-build-debug/CMakeFiles/3.30.5/CMakeRCCompiler.cmake \
 	C:/Software/RegisterQt/cmake-build-debug/CMakeFiles/3.30.5/CMakeSystem.cmake \

@@ -150,13 +150,61 @@ CMakeFiles/RegisterQt.dir/Register.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/RegisterQt.dir/Register.cpp.s"
 	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Software\RegisterQt\Register.cpp -o CMakeFiles\RegisterQt.dir\Register.cpp.s
 
+CMakeFiles/RegisterQt.dir/Observer.cpp.obj: CMakeFiles/RegisterQt.dir/flags.make
+CMakeFiles/RegisterQt.dir/Observer.cpp.obj: CMakeFiles/RegisterQt.dir/includes_CXX.rsp
+CMakeFiles/RegisterQt.dir/Observer.cpp.obj: C:/Software/RegisterQt/Observer.cpp
+CMakeFiles/RegisterQt.dir/Observer.cpp.obj: CMakeFiles/RegisterQt.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Software\RegisterQt\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/RegisterQt.dir/Observer.cpp.obj"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/RegisterQt.dir/Observer.cpp.obj -MF CMakeFiles\RegisterQt.dir\Observer.cpp.obj.d -o CMakeFiles\RegisterQt.dir\Observer.cpp.obj -c C:\Software\RegisterQt\Observer.cpp
+
+CMakeFiles/RegisterQt.dir/Observer.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/RegisterQt.dir/Observer.cpp.i"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Software\RegisterQt\Observer.cpp > CMakeFiles\RegisterQt.dir\Observer.cpp.i
+
+CMakeFiles/RegisterQt.dir/Observer.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/RegisterQt.dir/Observer.cpp.s"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Software\RegisterQt\Observer.cpp -o CMakeFiles\RegisterQt.dir\Observer.cpp.s
+
+CMakeFiles/RegisterQt.dir/Subject.cpp.obj: CMakeFiles/RegisterQt.dir/flags.make
+CMakeFiles/RegisterQt.dir/Subject.cpp.obj: CMakeFiles/RegisterQt.dir/includes_CXX.rsp
+CMakeFiles/RegisterQt.dir/Subject.cpp.obj: C:/Software/RegisterQt/Subject.cpp
+CMakeFiles/RegisterQt.dir/Subject.cpp.obj: CMakeFiles/RegisterQt.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Software\RegisterQt\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/RegisterQt.dir/Subject.cpp.obj"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/RegisterQt.dir/Subject.cpp.obj -MF CMakeFiles\RegisterQt.dir\Subject.cpp.obj.d -o CMakeFiles\RegisterQt.dir\Subject.cpp.obj -c C:\Software\RegisterQt\Subject.cpp
+
+CMakeFiles/RegisterQt.dir/Subject.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/RegisterQt.dir/Subject.cpp.i"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Software\RegisterQt\Subject.cpp > CMakeFiles\RegisterQt.dir\Subject.cpp.i
+
+CMakeFiles/RegisterQt.dir/Subject.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/RegisterQt.dir/Subject.cpp.s"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Software\RegisterQt\Subject.cpp -o CMakeFiles\RegisterQt.dir\Subject.cpp.s
+
+CMakeFiles/RegisterQt.dir/RegisterController.cpp.obj: CMakeFiles/RegisterQt.dir/flags.make
+CMakeFiles/RegisterQt.dir/RegisterController.cpp.obj: CMakeFiles/RegisterQt.dir/includes_CXX.rsp
+CMakeFiles/RegisterQt.dir/RegisterController.cpp.obj: C:/Software/RegisterQt/RegisterController.cpp
+CMakeFiles/RegisterQt.dir/RegisterController.cpp.obj: CMakeFiles/RegisterQt.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Software\RegisterQt\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/RegisterQt.dir/RegisterController.cpp.obj"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/RegisterQt.dir/RegisterController.cpp.obj -MF CMakeFiles\RegisterQt.dir\RegisterController.cpp.obj.d -o CMakeFiles\RegisterQt.dir\RegisterController.cpp.obj -c C:\Software\RegisterQt\RegisterController.cpp
+
+CMakeFiles/RegisterQt.dir/RegisterController.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/RegisterQt.dir/RegisterController.cpp.i"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Software\RegisterQt\RegisterController.cpp > CMakeFiles\RegisterQt.dir\RegisterController.cpp.i
+
+CMakeFiles/RegisterQt.dir/RegisterController.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/RegisterQt.dir/RegisterController.cpp.s"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Software\RegisterQt\RegisterController.cpp -o CMakeFiles\RegisterQt.dir\RegisterController.cpp.s
+
 # Object files for target RegisterQt
 RegisterQt_OBJECTS = \
 "CMakeFiles/RegisterQt.dir/RegisterQt_autogen/mocs_compilation.cpp.obj" \
 "CMakeFiles/RegisterQt.dir/main.cpp.obj" \
 "CMakeFiles/RegisterQt.dir/mainwindow.cpp.obj" \
 "CMakeFiles/RegisterQt.dir/Activity.cpp.obj" \
-"CMakeFiles/RegisterQt.dir/Register.cpp.obj"
+"CMakeFiles/RegisterQt.dir/Register.cpp.obj" \
+"CMakeFiles/RegisterQt.dir/Observer.cpp.obj" \
+"CMakeFiles/RegisterQt.dir/Subject.cpp.obj" \
+"CMakeFiles/RegisterQt.dir/RegisterController.cpp.obj"
 
 # External object files for target RegisterQt
 RegisterQt_EXTERNAL_OBJECTS =
@@ -166,6 +214,9 @@ RegisterQt.exe: CMakeFiles/RegisterQt.dir/main.cpp.obj
 RegisterQt.exe: CMakeFiles/RegisterQt.dir/mainwindow.cpp.obj
 RegisterQt.exe: CMakeFiles/RegisterQt.dir/Activity.cpp.obj
 RegisterQt.exe: CMakeFiles/RegisterQt.dir/Register.cpp.obj
+RegisterQt.exe: CMakeFiles/RegisterQt.dir/Observer.cpp.obj
+RegisterQt.exe: CMakeFiles/RegisterQt.dir/Subject.cpp.obj
+RegisterQt.exe: CMakeFiles/RegisterQt.dir/RegisterController.cpp.obj
 RegisterQt.exe: CMakeFiles/RegisterQt.dir/build.make
 RegisterQt.exe: C:/Qt/6.8.1/mingw_64/lib/libQt6Widgets.a
 RegisterQt.exe: C:/Qt/6.8.1/mingw_64/lib/libQt6Gui.a
@@ -174,7 +225,7 @@ RegisterQt.exe: C:/Qt/6.8.1/mingw_64/lib/libQt6EntryPoint.a
 RegisterQt.exe: CMakeFiles/RegisterQt.dir/linkLibs.rsp
 RegisterQt.exe: CMakeFiles/RegisterQt.dir/objects1.rsp
 RegisterQt.exe: CMakeFiles/RegisterQt.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=C:\Software\RegisterQt\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable RegisterQt.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=C:\Software\RegisterQt\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Linking CXX executable RegisterQt.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\RegisterQt.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

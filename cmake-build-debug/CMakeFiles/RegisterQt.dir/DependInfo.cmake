@@ -10,10 +10,13 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "" "RegisterQt_autogen/timestamp" "custom" "RegisterQt_autogen/deps"
   "C:/Software/RegisterQt/Activity.cpp" "CMakeFiles/RegisterQt.dir/Activity.cpp.obj" "gcc" "CMakeFiles/RegisterQt.dir/Activity.cpp.obj.d"
-  "C:/Software/RegisterQt/mainwindow.cpp" "CMakeFiles/RegisterQt.dir/MainWindow.cpp.obj" "gcc" "CMakeFiles/RegisterQt.dir/MainWindow.cpp.obj.d"
+  "C:/Software/RegisterQt/Observer.cpp" "CMakeFiles/RegisterQt.dir/Observer.cpp.obj" "gcc" "CMakeFiles/RegisterQt.dir/Observer.cpp.obj.d"
   "C:/Software/RegisterQt/Register.cpp" "CMakeFiles/RegisterQt.dir/Register.cpp.obj" "gcc" "CMakeFiles/RegisterQt.dir/Register.cpp.obj.d"
+  "C:/Software/RegisterQt/RegisterController.cpp" "CMakeFiles/RegisterQt.dir/RegisterController.cpp.obj" "gcc" "CMakeFiles/RegisterQt.dir/RegisterController.cpp.obj.d"
   "C:/Software/RegisterQt/cmake-build-debug/RegisterQt_autogen/mocs_compilation.cpp" "CMakeFiles/RegisterQt.dir/RegisterQt_autogen/mocs_compilation.cpp.obj" "gcc" "CMakeFiles/RegisterQt.dir/RegisterQt_autogen/mocs_compilation.cpp.obj.d"
+  "C:/Software/RegisterQt/Subject.cpp" "CMakeFiles/RegisterQt.dir/Subject.cpp.obj" "gcc" "CMakeFiles/RegisterQt.dir/Subject.cpp.obj.d"
   "C:/Software/RegisterQt/main.cpp" "CMakeFiles/RegisterQt.dir/main.cpp.obj" "gcc" "CMakeFiles/RegisterQt.dir/main.cpp.obj.d"
+  "C:/Software/RegisterQt/mainwindow.cpp" "CMakeFiles/RegisterQt.dir/mainwindow.cpp.obj" "gcc" "CMakeFiles/RegisterQt.dir/mainwindow.cpp.obj.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

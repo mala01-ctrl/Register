@@ -4,13 +4,16 @@
 
 #include "Register.h"
 
-void Register::addActivity(const Activity& activity) {
+void Register::addActivity(const Activity &activity) {
     this->activities.append(activity);
+    this->notify();
 }
 
 bool Register::removeActivity(int index) {
     if (index >= 0 && index < this->activities.size()) {
         this->activities.removeAt(index);
+
+        this->notify();
         return true;
     }
 

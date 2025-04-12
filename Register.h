@@ -7,9 +7,10 @@
 #include <QVector>
 
 #include "Activity.h"
+#include "Subject.h"
 
 
-class Register {
+class Register: public Subject {
 
 public:
 
@@ -19,8 +20,27 @@ public:
 
     void clearAll();
 
+    virtual void addObserver(Observer *observer) {
+        observers.push_back(observer);
+    }
+
+    virtual void removeObserver(Observer *observer) {
+        observers.remove(observer);
+    }
+
+    virtual void notify() {
+        for (auto observer : observers) {
+            observer->update();
+        }
+    }
+
+    QVector<Activity> getActivities() const {
+        return activities;
+    }
+
 private:
     QVector<Activity> activities;
+    std::list<Observer *> observers;
 
 };
 
