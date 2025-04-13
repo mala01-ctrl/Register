@@ -6,7 +6,6 @@
 #include "../Activity.h"
 #include <QDateTime>
 #include <QString>
-#include <QTime>
 
 TEST(ActivityTest, ToString) {
     const QDateTime start = QDateTime::fromString("2025-04-13 10:00", "yyyy-MM-dd HH:mm");

@@ -10,7 +10,9 @@ find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Core Widgets)
 include_directories(${gtest_SOURCE_DIR}/include ${gtest_SOURCE_DIR})
 
 set(TEST_SOURCE_FILES runAllTests.cpp
-        ActivityTest.cpp)
+        ActivityTest.cpp
+        RegisterSuite.cpp
+)
 
 add_executable(runRegisterTests ${TEST_SOURCE_FILES})
 
