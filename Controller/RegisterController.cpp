@@ -13,3 +13,9 @@ void RegisterController::removeActivityByIndex(int index) const {
     reg->removeActivity(index);
 }
 
+void RegisterController::clearAllActivities() const {
+    if (reg->getActivities().size() > 0) {
+        this->reg->clearAll();
+    }
+}
+

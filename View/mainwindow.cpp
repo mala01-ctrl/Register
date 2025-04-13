@@ -8,6 +8,9 @@
 MainWindow::MainWindow(Register *reg, RegisterController *controller, QWidget *parent): QMainWindow(parent),
     ui(new Ui::MainWindow) {
     ui->setupUi(this);
+
+    // Imposta le dimensioni fisse della finestra a 800x600 pixel
+    setFixedSize(844, 368);
     this->reg = reg;
     this->reg->addObserver(this);
     this->controller = controller;
@@ -62,8 +65,10 @@ void MainWindow::update() {
         const Activity &activity = activities[i];
 
         this->ui->tableWidget->setItem(i, 0, new QTableWidgetItem(activity.getDescription()));
-        this->ui->tableWidget->setItem(i, 1, new QTableWidgetItem(activity.getStartDateTime().toString()));
-        this->ui->tableWidget->setItem(i, 2, new QTableWidgetItem(activity.getEndDateTime().toString()));
+        this->ui->tableWidget->setItem(
+            i, 1, new QTableWidgetItem(activity.getStartDateTime().toString("dd/MM/yyyy hh:mm")));
+        this->ui->tableWidget->setItem(
+            i, 2, new QTableWidgetItem(activity.getEndDateTime().toString("dd/MM/yyyy hh:mm")));
     }
 }
 
@@ -80,4 +85,8 @@ void MainWindow::on_btnClear_clicked() const {
     if (row != -1) {
         this->controller->removeActivityByIndex(row);
     }
+}
+
+void MainWindow::on_btnClearAll_clicked() const {
+    this->controller->clearAllActivities();
 }

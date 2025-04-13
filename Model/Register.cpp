@@ -22,4 +22,5 @@ bool Register::removeActivity(int index) {
 
 void Register::clearAll() {
     this->activities.clear();
+    this->notify();
 }

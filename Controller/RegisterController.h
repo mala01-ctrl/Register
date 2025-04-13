@@ -15,6 +15,8 @@ public:
 
     void removeActivityByIndex(int index) const;
 
+    void clearAllActivities() const;
+
 private:
     Register *reg;
 };

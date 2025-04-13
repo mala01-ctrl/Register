@@ -3,7 +3,7 @@
 //
 
 #include "gtest/gtest.h"
-#include "../Activity.h"
+#include "../Model/Activity.h"
 #include <QDateTime>
 #include <QString>
 

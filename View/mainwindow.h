@@ -32,6 +32,8 @@ private slots:
 
     void on_btnClear_clicked() const;
 
+    void on_btnClearAll_clicked() const;
+
 private:
     Ui::MainWindow *ui;
     Register *reg;

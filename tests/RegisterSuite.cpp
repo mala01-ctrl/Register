@@ -3,7 +3,7 @@
 //
 
 #include "gtest/gtest.h"
-#include "../Register.h"
+#include "../Model/Register.h"
 
 class RegisterSuite : public ::testing::Test {
 protected:
