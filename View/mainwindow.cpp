@@ -2,7 +2,7 @@
 #include "ui_mainwindow.h"
 #include <QString>
 
-#include "Activity.h"
+#include "../Model/Activity.h"
 
 
 MainWindow::MainWindow(Register *reg, RegisterController *controller, QWidget *parent): QMainWindow(parent),

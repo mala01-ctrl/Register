@@ -7,7 +7,7 @@
 #include <QVector>
 
 #include "Activity.h"
-#include "Subject.h"
+#include "../Interfaces/Subject.h"
 
 
 class Register: public Subject {

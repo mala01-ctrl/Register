@@ -1,11 +1,11 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
-#include <QMainWindow>
 #include <ui_mainwindow.h>
 
-#include "Register.h"
-#include "RegisterController.h"
+#include "../Model/Register.h"
+#include "../Controller/RegisterController.h"
+#include "../Interfaces/Observer.h"
 
 QT_BEGIN_NAMESPACE
 
@@ -15,11 +15,11 @@ namespace Ui {
 
 QT_END_NAMESPACE
 
-class MainWindow : public QMainWindow, public Observer{
+class MainWindow : public QMainWindow, public Observer {
     Q_OBJECT
 
 public:
-    MainWindow(Register* reg, RegisterController* controller, QWidget *parent = nullptr);
+    MainWindow(Register *reg, RegisterController *controller, QWidget *parent = nullptr);
 
     ~MainWindow();
 
@@ -34,8 +34,7 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
-    Register* reg;
-    RegisterController* controller;
-
+    Register *reg;
+    RegisterController *controller;
 };
 #endif // MAINWINDOW_H

@@ -16,27 +16,27 @@ find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Core Widgets)
 
 set(PROJECT_SOURCES
         main.cpp
-        mainwindow.cpp
-        mainwindow.h
-        mainwindow.ui
-        Activity.cpp
-        Activity.h
-        Register.cpp
-        Register.h
-        Observer.cpp
-        Observer.h
-        Subject.cpp
-        Subject.h
-        RegisterController.cpp
-        RegisterController.h
+        View/mainwindow.cpp
+        View/mainwindow.h
+        View/mainwindow.ui
+        Model/Activity.cpp
+        Model/Activity.h
+        Model/Register.cpp
+        Model/Register.h
+        Interfaces/Observer.cpp
+        Interfaces/Observer.h
+        Interfaces/Subject.cpp
+        Interfaces/Subject.h
+        Controller/RegisterController.cpp
+        Controller/RegisterController.h
 )
 
 set(CORE_SOURCES
-        Activity.cpp
-        Register.cpp
-        Observer.cpp
-        Subject.cpp
-        RegisterController.cpp
+        Model/Activity.cpp
+        Model/Register.cpp
+        Interfaces/Observer.cpp
+        Interfaces/Subject.cpp
+        Controller/RegisterController.cpp
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)

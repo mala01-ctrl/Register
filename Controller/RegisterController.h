@@ -4,7 +4,7 @@
 
 #ifndef REGISTERCONTROLLER_H
 #define REGISTERCONTROLLER_H
-#include "Register.h"
+#include "../Model/Register.h"
 
 
 class RegisterController {
