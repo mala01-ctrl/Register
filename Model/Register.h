@@ -20,6 +20,8 @@ public:
 
     void clearAll();
 
+    void filterActivities(const QDate &date);
+
     virtual void addObserver(Observer *observer) {
         observers.push_back(observer);
     }
@@ -35,11 +37,12 @@ public:
     }
 
     QVector<Activity> getActivities() const {
-        return activities;
+        return filteredActivities;
     }
 
 private:
     QVector<Activity> activities;
+    QVector<Activity> filteredActivities;
     std::list<Observer *> observers;
 
 };

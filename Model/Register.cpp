@@ -6,14 +6,14 @@
 
 void Register::addActivity(const Activity &activity) {
     this->activities.append(activity);
-    this->notify();
+    this->filterActivities(QDate());
 }
 
 bool Register::removeActivity(int index) {
     if (index >= 0 && index < this->activities.size()) {
         this->activities.removeAt(index);
+        this->filterActivities(QDate());
 
-        this->notify();
         return true;
     }
 
@@ -22,5 +22,21 @@ bool Register::removeActivity(int index) {
 
 void Register::clearAll() {
     this->activities.clear();
+    this->filterActivities(QDate());
+}
+
+void Register::filterActivities(const QDate &date) {
+    this->filteredActivities.clear();
+
+    if (date.isValid()) {
+        for (const Activity &activity: this->activities) {
+            if (activity.getStartDateTime().date() == date) {
+                this->filteredActivities.append(activity);
+            }
+        }
+    } else {
+        this->filteredActivities = this->activities;
+    }
+
     this->notify();
 }

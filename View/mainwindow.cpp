@@ -22,7 +22,7 @@ MainWindow::MainWindow(Register *reg, RegisterController *controller, QWidget *p
     ui->tableWidget->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
 
 
-    ui->dateEdit->setDate(QDate::currentDate());
+    ui->dateFilter->setDate(QDate::currentDate());
     this->ui->btnClear->setEnabled(false);
 
     //Connessione del segnale di selezione della riga
@@ -113,4 +113,9 @@ void MainWindow::on_btnClearAll_clicked() {
     if (reply == QMessageBox::Yes) {
         this->controller->clearAllActivities();
     }
+}
+
+void MainWindow::on_btnFilter_clicked() {
+    QDate filterDate = ui->dateFilter->date();
+    this->controller->filterAllActivities(filterDate);
 }

@@ -19,3 +19,9 @@ void RegisterController::clearAllActivities() const {
     }
 }
 
+void RegisterController::filterAllActivities(const QDate &date) const {
+    if (reg->getActivities().size() > 0) {
+        this->reg->filterActivities(date);
+    }
+}
+

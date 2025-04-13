@@ -17,6 +17,8 @@ public:
 
     void clearAllActivities() const;
 
+    void filterAllActivities(const QDate &date) const;
+
 private:
     Register *reg;
 };
