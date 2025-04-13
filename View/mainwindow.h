@@ -1,6 +1,7 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
+#include <QMessageBox>
 #include <ui_mainwindow.h>
 
 #include "../Model/Register.h"
@@ -27,12 +28,14 @@ public:
 
     void onItemSelectionChanged() const;
 
+    QMessageBox::StandardButton openMessageBox();
+
 private slots:
     void on_btnAdd_clicked();
 
-    void on_btnClear_clicked() const;
+    void on_btnClear_clicked();
 
-    void on_btnClearAll_clicked() const;
+    void on_btnClearAll_clicked();
 
 private:
     Ui::MainWindow *ui;

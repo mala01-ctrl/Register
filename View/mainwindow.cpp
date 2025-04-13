@@ -1,6 +1,7 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include <QString>
+#include <QMessageBox>
 
 #include "../Model/Activity.h"
 
@@ -22,6 +23,7 @@ MainWindow::MainWindow(Register *reg, RegisterController *controller, QWidget *p
 
 
     ui->dateEdit->setDate(QDate::currentDate());
+    this->ui->btnClear->setEnabled(false);
 
     //Connessione del segnale di selezione della riga
     connect(ui->tableWidget, &QTableWidget::itemSelectionChanged, this, &MainWindow::onItemSelectionChanged);
@@ -79,14 +81,36 @@ void MainWindow::onItemSelectionChanged() const {
         this->ui->btnClear->setEnabled(true);
 }
 
-void MainWindow::on_btnClear_clicked() const {
-    const int row = ui->tableWidget->currentRow();
+QMessageBox::StandardButton MainWindow::openMessageBox() {
+    // Mostra una finestra di dialogo di conferma
+    QMessageBox::StandardButton reply = QMessageBox::question(
+        this,
+        "Conferma eliminazione",
+        "Sei sicuro di voler eliminare tutte le attività?",
+        QMessageBox::Yes | QMessageBox::No
+    );
 
-    if (row != -1) {
-        this->controller->removeActivityByIndex(row);
+    return reply;
+}
+
+void MainWindow::on_btnClear_clicked() {
+    QMessageBox::StandardButton reply = this->openMessageBox();
+
+    if (reply == QMessageBox::Yes) {
+        const int row = ui->tableWidget->currentRow();
+
+        if (row != -1) {
+            this->controller->removeActivityByIndex(row);
+        }
     }
 }
 
-void MainWindow::on_btnClearAll_clicked() const {
-    this->controller->clearAllActivities();
+void MainWindow::on_btnClearAll_clicked() {
+    // Mostra una finestra di dialogo di conferma
+    QMessageBox::StandardButton reply = this->openMessageBox();
+
+    // Se l'utente clicca su "Yes", esegui l'eliminazione
+    if (reply == QMessageBox::Yes) {
+        this->controller->clearAllActivities();
+    }
 }
