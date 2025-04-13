@@ -219,6 +219,7 @@ RegisterQt.exe: CMakeFiles/RegisterQt.dir/Subject.cpp.obj
 RegisterQt.exe: CMakeFiles/RegisterQt.dir/RegisterController.cpp.obj
 RegisterQt.exe: CMakeFiles/RegisterQt.dir/build.make
 RegisterQt.exe: C:/Qt/6.8.1/mingw_64/lib/libQt6Widgets.a
+RegisterQt.exe: libcore.a
 RegisterQt.exe: C:/Qt/6.8.1/mingw_64/lib/libQt6Gui.a
 RegisterQt.exe: C:/Qt/6.8.1/mingw_64/lib/libQt6Core.a
 RegisterQt.exe: C:/Qt/6.8.1/mingw_64/lib/libQt6EntryPoint.a

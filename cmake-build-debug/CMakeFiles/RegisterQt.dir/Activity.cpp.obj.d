@@ -1,5 +1,6 @@
 CMakeFiles/RegisterQt.dir/Activity.cpp.obj: \
  C:\Software\RegisterQt\Activity.cpp C:\Software\RegisterQt\Activity.h \
+ C:/Qt/6.8.1/mingw_64/include/QtCore/QDateTime \
  C:/Qt/6.8.1/mingw_64/include/QtCore/qdatetime.h \
  C:/Qt/6.8.1/mingw_64/include/QtCore/qcalendar.h \
  C:/MinGW/include/c++/13.2.0/limits \
@@ -326,4 +327,6 @@ CMakeFiles/RegisterQt.dir/Activity.cpp.obj: \
  C:/Qt/6.8.1/mingw_64/include/QtCore/q23utility.h \
  C:/Qt/6.8.1/mingw_64/include/QtCore/qobject.h \
  C:/Qt/6.8.1/mingw_64/include/QtCore/qobject_impl.h \
- C:/Qt/6.8.1/mingw_64/include/QtCore/qbindingstorage.h
+ C:/Qt/6.8.1/mingw_64/include/QtCore/qbindingstorage.h \
+ C:/Qt/6.8.1/mingw_64/include/QtCore/QString \
+ C:/Qt/6.8.1/mingw_64/include/QtCore/qstring.h

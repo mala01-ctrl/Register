@@ -1,0 +1,2 @@
+C:\MinGW\bin\ar.exe qc libcore.a CMakeFiles/core.dir/core_autogen/mocs_compilation.cpp.obj CMakeFiles/core.dir/Activity.cpp.obj CMakeFiles/core.dir/Register.cpp.obj CMakeFiles/core.dir/Observer.cpp.obj CMakeFiles/core.dir/Subject.cpp.obj CMakeFiles/core.dir/RegisterController.cpp.obj
+C:\MinGW\bin\ranlib.exe libcore.a

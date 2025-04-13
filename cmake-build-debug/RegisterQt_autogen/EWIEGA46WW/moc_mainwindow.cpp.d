@@ -206,6 +206,8 @@ C:/Software/RegisterQt/cmake-build-debug/RegisterQt_autogen/EWIEGA46WW/moc_mainw
   C:/MinGW/x86_64-w64-mingw32/include/time.h \
   C:/MinGW/x86_64-w64-mingw32/include/vadefs.h \
   C:/MinGW/x86_64-w64-mingw32/include/wchar.h \
+  C:/Qt/6.8.1/mingw_64/include/QtCore/QDateTime \
+  C:/Qt/6.8.1/mingw_64/include/QtCore/QString \
   C:/Qt/6.8.1/mingw_64/include/QtCore/QVector \
   C:/Qt/6.8.1/mingw_64/include/QtCore/q20functional.h \
   C:/Qt/6.8.1/mingw_64/include/QtCore/q20iterator.h \

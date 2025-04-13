@@ -206,7 +206,6 @@ RegisterQt_autogen/timestamp: \
 	C:/MinGW/x86_64-w64-mingw32/include/vadefs.h \
 	C:/MinGW/x86_64-w64-mingw32/include/wchar.h \
 	C:/Program\ Files/JetBrains/CLion\ 2024.3.1/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeCXXInformation.cmake \
-	C:/Program\ Files/JetBrains/CLion\ 2024.3.1/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake \
 	C:/Program\ Files/JetBrains/CLion\ 2024.3.1/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeCommonLanguageInclude.cmake \
 	C:/Program\ Files/JetBrains/CLion\ 2024.3.1/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeFindDependencyMacro.cmake \
 	C:/Program\ Files/JetBrains/CLion\ 2024.3.1/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeGenericSystem.cmake \
@@ -227,9 +226,6 @@ RegisterQt_autogen/timestamp: \
 	C:/Program\ Files/JetBrains/CLion\ 2024.3.1/bin/cmake/win/x64/share/cmake-3.30/Modules/FindThreads.cmake \
 	C:/Program\ Files/JetBrains/CLion\ 2024.3.1/bin/cmake/win/x64/share/cmake-3.30/Modules/FindVulkan.cmake \
 	C:/Program\ Files/JetBrains/CLion\ 2024.3.1/bin/cmake/win/x64/share/cmake-3.30/Modules/GNUInstallDirs.cmake \
-	C:/Program\ Files/JetBrains/CLion\ 2024.3.1/bin/cmake/win/x64/share/cmake-3.30/Modules/Internal/CheckCompilerFlag.cmake \
-	C:/Program\ Files/JetBrains/CLion\ 2024.3.1/bin/cmake/win/x64/share/cmake-3.30/Modules/Internal/CheckFlagCommonConfig.cmake \
-	C:/Program\ Files/JetBrains/CLion\ 2024.3.1/bin/cmake/win/x64/share/cmake-3.30/Modules/Internal/CheckSourceCompiles.cmake \
 	C:/Program\ Files/JetBrains/CLion\ 2024.3.1/bin/cmake/win/x64/share/cmake-3.30/Modules/Platform/Windows-GNU-CXX-ABI.cmake \
 	C:/Program\ Files/JetBrains/CLion\ 2024.3.1/bin/cmake/win/x64/share/cmake-3.30/Modules/Platform/Windows-GNU-CXX.cmake \
 	C:/Program\ Files/JetBrains/CLion\ 2024.3.1/bin/cmake/win/x64/share/cmake-3.30/Modules/Platform/Windows-GNU.cmake \
@@ -237,6 +233,8 @@ RegisterQt_autogen/timestamp: \
 	C:/Program\ Files/JetBrains/CLion\ 2024.3.1/bin/cmake/win/x64/share/cmake-3.30/Modules/Platform/Windows-windres.cmake \
 	C:/Program\ Files/JetBrains/CLion\ 2024.3.1/bin/cmake/win/x64/share/cmake-3.30/Modules/Platform/Windows.cmake \
 	C:/Program\ Files/JetBrains/CLion\ 2024.3.1/bin/cmake/win/x64/share/cmake-3.30/Modules/Platform/WindowsPaths.cmake \
+	C:/Qt/6.8.1/mingw_64/include/QtCore/QDateTime \
+	C:/Qt/6.8.1/mingw_64/include/QtCore/QString \
 	C:/Qt/6.8.1/mingw_64/include/QtCore/QVector \
 	C:/Qt/6.8.1/mingw_64/include/QtCore/q20functional.h \
 	C:/Qt/6.8.1/mingw_64/include/QtCore/q20iterator.h \
@@ -437,7 +435,6 @@ RegisterQt_autogen/timestamp: \
 	C:/Qt/6.8.1/mingw_64/lib/cmake/Qt6CoreTools/Qt6CoreToolsConfigVersion.cmake \
 	C:/Qt/6.8.1/mingw_64/lib/cmake/Qt6CoreTools/Qt6CoreToolsConfigVersionImpl.cmake \
 	C:/Qt/6.8.1/mingw_64/lib/cmake/Qt6CoreTools/Qt6CoreToolsDependencies.cmake \
-	C:/Qt/6.8.1/mingw_64/lib/cmake/Qt6CoreTools/Qt6CoreToolsTargets-relwithdebinfo.cmake \
 	C:/Qt/6.8.1/mingw_64/lib/cmake/Qt6CoreTools/Qt6CoreToolsTargets.cmake \
 	C:/Qt/6.8.1/mingw_64/lib/cmake/Qt6CoreTools/Qt6CoreToolsVersionlessTargets.cmake \
 	C:/Qt/6.8.1/mingw_64/lib/cmake/Qt6EntryPointPrivate/Qt6EntryPointMinGW32Target.cmake \
@@ -502,7 +499,6 @@ RegisterQt_autogen/timestamp: \
 	C:/Qt/6.8.1/mingw_64/lib/cmake/Qt6GuiTools/Qt6GuiToolsConfigVersion.cmake \
 	C:/Qt/6.8.1/mingw_64/lib/cmake/Qt6GuiTools/Qt6GuiToolsConfigVersionImpl.cmake \
 	C:/Qt/6.8.1/mingw_64/lib/cmake/Qt6GuiTools/Qt6GuiToolsDependencies.cmake \
-	C:/Qt/6.8.1/mingw_64/lib/cmake/Qt6GuiTools/Qt6GuiToolsTargets-relwithdebinfo.cmake \
 	C:/Qt/6.8.1/mingw_64/lib/cmake/Qt6GuiTools/Qt6GuiToolsTargets.cmake \
 	C:/Qt/6.8.1/mingw_64/lib/cmake/Qt6GuiTools/Qt6GuiToolsVersionlessTargets.cmake \
 	C:/Qt/6.8.1/mingw_64/lib/cmake/Qt6Widgets/Qt6QModernWindowsStylePluginAdditionalTargetInfo.cmake \
@@ -524,7 +520,6 @@ RegisterQt_autogen/timestamp: \
 	C:/Qt/6.8.1/mingw_64/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsConfigVersion.cmake \
 	C:/Qt/6.8.1/mingw_64/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsConfigVersionImpl.cmake \
 	C:/Qt/6.8.1/mingw_64/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsDependencies.cmake \
-	C:/Qt/6.8.1/mingw_64/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsTargets-relwithdebinfo.cmake \
 	C:/Qt/6.8.1/mingw_64/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsTargets.cmake \
 	C:/Qt/6.8.1/mingw_64/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsVersionlessTargets.cmake \
 	C:/Qt/6.8.1/mingw_64/lib/cmake/Qt6ZlibPrivate/Qt6ZlibPrivateAdditionalTargetInfo.cmake \

@@ -439,7 +439,10 @@ CMakeFiles/RegisterQt.dir/main.cpp.obj: C:\Software\RegisterQt\main.cpp \
  C:/Qt/6.8.1/mingw_64/include/QtCore/QVector \
  C:/Qt/6.8.1/mingw_64/include/QtCore/qvector.h \
  C:\Software\RegisterQt\Activity.h \
+ C:/Qt/6.8.1/mingw_64/include/QtCore/QDateTime \
  C:/Qt/6.8.1/mingw_64/include/QtCore/qdatetime.h \
+ C:/Qt/6.8.1/mingw_64/include/QtCore/QString \
+ C:/Qt/6.8.1/mingw_64/include/QtCore/qstring.h \
  C:\Software\RegisterQt\Subject.h C:\Software\RegisterQt\Observer.h \
  C:\Software\RegisterQt\RegisterController.h \
  C:/Qt/6.8.1/mingw_64/include/QtWidgets/QApplication

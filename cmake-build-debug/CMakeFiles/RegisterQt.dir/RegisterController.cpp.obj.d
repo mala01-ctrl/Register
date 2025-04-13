@@ -287,6 +287,7 @@ CMakeFiles/RegisterQt.dir/RegisterController.cpp.obj: \
  C:/Qt/6.8.1/mingw_64/include/QtCore/qalgorithms.h \
  C:/Qt/6.8.1/mingw_64/include/QtCore/qstringmatcher.h \
  C:\Software\RegisterQt\Activity.h \
+ C:/Qt/6.8.1/mingw_64/include/QtCore/QDateTime \
  C:/Qt/6.8.1/mingw_64/include/QtCore/qdatetime.h \
  C:/Qt/6.8.1/mingw_64/include/QtCore/qcalendar.h \
  C:/Qt/6.8.1/mingw_64/include/QtCore/qlocale.h \
@@ -331,4 +332,6 @@ CMakeFiles/RegisterQt.dir/RegisterController.cpp.obj: \
  C:/Qt/6.8.1/mingw_64/include/QtCore/qobject.h \
  C:/Qt/6.8.1/mingw_64/include/QtCore/qobject_impl.h \
  C:/Qt/6.8.1/mingw_64/include/QtCore/qbindingstorage.h \
+ C:/Qt/6.8.1/mingw_64/include/QtCore/QString \
+ C:/Qt/6.8.1/mingw_64/include/QtCore/qstring.h \
  C:\Software\RegisterQt\Subject.h C:\Software\RegisterQt\Observer.h

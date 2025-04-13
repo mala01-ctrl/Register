@@ -5,8 +5,8 @@
 #ifndef ACTIVITY_H
 #define ACTIVITY_H
 
-#include <qdatetime.h>
-#include <string>
+#include <QDateTime>
+#include <QString>
 
 
 class Activity {
