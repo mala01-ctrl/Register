@@ -22,6 +22,8 @@ public:
 
     void filterActivities(const QDate &date);
 
+    void resetAllActivities();
+
     virtual void addObserver(Observer *observer) {
         observers.push_back(observer);
     }

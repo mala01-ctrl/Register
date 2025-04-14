@@ -8,25 +8,28 @@
 
 MainWindow::MainWindow(Register *reg, RegisterController *controller, QWidget *parent): QMainWindow(parent),
     ui(new Ui::MainWindow) {
-    ui->setupUi(this);
+    this->ui->setupUi(this);
 
     // Imposta le dimensioni fisse della finestra a 800x600 pixel
-    setFixedSize(844, 368);
+    this->setFixedSize(844, 368);
     this->reg = reg;
     this->reg->addObserver(this);
     this->controller = controller;
 
     const QDateTime now = QDateTime::currentDateTime();
-    ui->startTime->setDateTime(now);
-    ui->endTime->setDateTime(now);
-    ui->tableWidget->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
+    this->ui->startTime->setDateTime(now);
+    this->ui->endTime->setDateTime(now.addSecs(3600));
+    this->ui->tableWidget->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
 
 
-    ui->dateFilter->setDate(QDate::currentDate());
+    this->ui->dateFilter->setDate(QDate::currentDate());
+    //Inizialmente il pulsante di reset è nascosto
+    this->ui->btnReset->setVisible(false);
+
     this->ui->btnClear->setEnabled(false);
 
     //Connessione del segnale di selezione della riga
-    connect(ui->tableWidget, &QTableWidget::itemSelectionChanged, this, &MainWindow::onItemSelectionChanged);
+    this->connect(ui->tableWidget, &QTableWidget::itemSelectionChanged, this, &MainWindow::onItemSelectionChanged);
 }
 
 
@@ -36,18 +39,19 @@ MainWindow::~MainWindow() {
 }
 
 void MainWindow::on_btnAdd_clicked() {
-    QString descrizione = ui->txtDescription->toPlainText();
-    QDateTime startDate = ui->startTime->dateTime();
-    QDateTime endDate = ui->endTime->dateTime();
+    const QString descrizione = ui->txtDescription->toPlainText();
+    const QDateTime startDate = ui->startTime->dateTime();
+    const QDateTime endDate = ui->endTime->dateTime();
 
-    if (descrizione.isEmpty()) {
-        //Qui si mostrerà l'errore
-        return;
+    const int errorCode = this->controller->addActivity(descrizione, startDate, endDate);
+
+    if (errorCode == RegisterController::ERROR_NONE) {
+        this->ui->txtDescription->clear();
+    } else if (errorCode == RegisterController::INVALID_DESCRIPTION) {
+        QMessageBox::warning(this, "Errore", "La descrizione non può essere vuota");
+    } else if (errorCode == RegisterController::INVALID_DATE_RANGE) {
+        QMessageBox::warning(this, "Errore", "La data di inizio deve essere minore della data di fine");
     }
-
-    this->controller->addActivity(descrizione, startDate, endDate);
-
-    this->ui->txtDescription->clear();
 }
 
 void MainWindow::update() {
@@ -118,4 +122,11 @@ void MainWindow::on_btnClearAll_clicked() {
 void MainWindow::on_btnFilter_clicked() {
     QDate filterDate = ui->dateFilter->date();
     this->controller->filterAllActivities(filterDate);
+    this->ui->btnReset->setVisible(true);
+}
+
+void MainWindow::on_btnReset_clicked() {
+    this->reg->resetAllActivities();
+    this->ui->dateFilter->clear();
+    this->ui->btnReset->setVisible(false);
 }

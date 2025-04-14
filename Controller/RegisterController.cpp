@@ -4,9 +4,16 @@
 
 #include "RegisterController.h"
 
-void RegisterController::addActivity(const QString &decription, const QDateTime &start, const QDateTime &end) const {
-    Activity a(decription, start, end);
+int RegisterController::addActivity(const QString &description, const QDateTime &start, const QDateTime &end) const {
+    if (start >= end) {
+        return INVALID_DATE_RANGE;
+    }
+    if (description.isEmpty()) {
+        return INVALID_DESCRIPTION;
+    }
+    Activity a(description, start, end);
     reg->addActivity(a);
+    return ERROR_NONE;
 }
 
 void RegisterController::removeActivityByIndex(int index) const {
@@ -25,3 +32,6 @@ void RegisterController::filterAllActivities(const QDate &date) const {
     }
 }
 
+void RegisterController::resetAllActivities() const {
+    this->reg->resetAllActivities();
+}

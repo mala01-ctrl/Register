@@ -10,7 +10,7 @@
     <x>0</x>
     <y>0</y>
     <width>844</width>
-    <height>368</height>
+    <height>419</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -20,7 +20,7 @@
    </sizepolicy>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>Register</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QGridLayout" name="gridLayout">
@@ -31,6 +31,9 @@
         <width>0</width>
         <height>30</height>
        </size>
+      </property>
+      <property name="calendarPopup">
+       <bool>true</bool>
       </property>
      </widget>
     </item>
@@ -160,6 +163,9 @@
             <height>30</height>
            </size>
           </property>
+          <property name="calendarPopup">
+           <bool>true</bool>
+          </property>
          </widget>
         </item>
        </layout>
@@ -205,6 +211,9 @@
             <width>0</width>
             <height>30</height>
            </size>
+          </property>
+          <property name="calendarPopup">
+           <bool>true</bool>
           </property>
          </widget>
         </item>
@@ -283,6 +292,25 @@
         <string>Data e ora di fine</string>
        </property>
       </column>
+     </widget>
+    </item>
+    <item row="2" column="2">
+     <widget class="QPushButton" name="btnReset">
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>30</height>
+       </size>
+      </property>
+      <property name="baseSize">
+       <size>
+        <width>0</width>
+        <height>0</height>
+       </size>
+      </property>
+      <property name="text">
+       <string>Reset</string>
+      </property>
      </widget>
     </item>
    </layout>

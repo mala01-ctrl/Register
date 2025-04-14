@@ -40,3 +40,8 @@ void Register::filterActivities(const QDate &date) {
 
     this->notify();
 }
+
+void Register::resetAllActivities() {
+    this->filteredActivities = this->activities;
+    this->notify();
+}

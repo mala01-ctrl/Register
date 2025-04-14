@@ -39,6 +39,8 @@ private slots:
 
     void on_btnFilter_clicked();
 
+    void on_btnReset_clicked();
+
 private:
     Ui::MainWindow *ui;
     Register *reg;
