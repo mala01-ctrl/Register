@@ -16,13 +16,15 @@ public:
 
     void addActivity(const Activity& activity);
 
-    bool removeActivity(int index);
+    bool removeActivity(const QString &description, const QDateTime &start);
 
     void clearAll();
 
     void filterActivities(const QDate &date);
 
     void resetAllActivities();
+
+    int findActivity(const QString &description, const QDateTime &start);
 
     virtual void addObserver(Observer *observer) {
         observers.push_back(observer);

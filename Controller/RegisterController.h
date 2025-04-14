@@ -12,13 +12,14 @@ public:
     static const int ERROR_NONE = 0;
     static const int INVALID_DESCRIPTION = 1;
     static const int INVALID_DATE_RANGE = 2;
+    static const int DUPLICATED_ACTIVITY = 3;
 
 
     explicit RegisterController(Register *reg) : reg(reg) {}
 
     int addActivity(const QString &description, const QDateTime &start, const QDateTime &end) const;
 
-    void removeActivityByIndex(int index) const;
+    void removeActivityByIndex(const QString &description, const QDateTime &start) const;
 
     void clearAllActivities() const;
 

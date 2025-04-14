@@ -9,15 +9,14 @@ void Register::addActivity(const Activity &activity) {
     this->filterActivities(QDate());
 }
 
-bool Register::removeActivity(int index) {
-    if (index >= 0 && index < this->activities.size()) {
-        this->activities.removeAt(index);
-        this->filterActivities(QDate());
+bool Register::removeActivity(const QString &description, const QDateTime &start) {
+    const int position = this->findActivity(description, start);
+    if (position == -1)
+        return false;
 
-        return true;
-    }
-
-    return false;
+    this->activities.removeAt(position);
+    this->filterActivities(QDate());
+    return true;
 }
 
 void Register::clearAll() {
@@ -44,4 +43,16 @@ void Register::filterActivities(const QDate &date) {
 void Register::resetAllActivities() {
     this->filteredActivities = this->activities;
     this->notify();
+}
+
+int Register::findActivity(const QString &description, const QDateTime &start) {
+    for (int i = 0; i < this->activities.size(); i++) {
+        qDebug() << "Comparing description:" << this->activities[i].getDescription() << "with:" << description;
+        qDebug() << "Comparing start time:" << this->activities[i].getStartDateTime() << "with:" << start;
+        if (QString::compare(this->activities[i].getDescription(), description) == 0 && this->activities[i].
+            getStartDateTime() == start) {
+            return i;
+        }
+    }
+    return -1;
 }

@@ -51,31 +51,30 @@ void MainWindow::on_btnAdd_clicked() {
         QMessageBox::warning(this, "Errore", "La descrizione non può essere vuota");
     } else if (errorCode == RegisterController::INVALID_DATE_RANGE) {
         QMessageBox::warning(this, "Errore", "La data di inizio deve essere minore della data di fine");
+    } else if (errorCode == RegisterController::DUPLICATED_ACTIVITY) {
+        QMessageBox::warning(this, "Errore", "Esiste già un'attività con lo stesso nome e data");
     }
 }
 
 void MainWindow::update() {
+    bool sortingEnabled = this->ui->tableWidget->isSortingEnabled();
+    this->ui->tableWidget->setSortingEnabled(false);
     QVector<Activity> activities = this->reg->getActivities();
     this->ui->tableWidget->clearContents();
+    this->ui->tableWidget->setRowCount(activities.size()); // Imposta il numero di righe
 
-    const int rowCount = activities.size();
-    while (this->ui->tableWidget->rowCount() < rowCount) {
-        this->ui->tableWidget->insertRow(this->ui->tableWidget->rowCount());
-    }
-
-    while (this->ui->tableWidget->rowCount() > rowCount) {
-        this->ui->tableWidget->removeRow(this->ui->tableWidget->rowCount() - 1);
-    }
-
-    for (int i = 0; i < rowCount; i++) {
+    for (int i = 0; i < activities.size(); i++) {
         const Activity &activity = activities[i];
+        const QDateTime &startDateTime = activity.getStartDateTime();
+        const QDateTime &endDateTime = activity.getEndDateTime();
 
         this->ui->tableWidget->setItem(i, 0, new QTableWidgetItem(activity.getDescription()));
-        this->ui->tableWidget->setItem(
-            i, 1, new QTableWidgetItem(activity.getStartDateTime().toString("dd/MM/yyyy hh:mm")));
-        this->ui->tableWidget->setItem(
-            i, 2, new QTableWidgetItem(activity.getEndDateTime().toString("dd/MM/yyyy hh:mm")));
+        QTableWidgetItem *startDateItem = new QTableWidgetItem(startDateTime.toString("dd/MM/yyyy hh:mm"));
+        startDateItem->setData(Qt::UserRole + 1, startDateTime);
+        this->ui->tableWidget->setItem(i, 1, startDateItem);
+        this->ui->tableWidget->setItem(i, 2, new QTableWidgetItem(endDateTime.toString("dd/MM/yyyy hh:mm")));
     }
+    this->ui->tableWidget->setSortingEnabled(sortingEnabled);
 }
 
 void MainWindow::onItemSelectionChanged() const {
@@ -101,11 +100,17 @@ void MainWindow::on_btnClear_clicked() {
     QMessageBox::StandardButton reply = this->openMessageBox();
 
     if (reply == QMessageBox::Yes) {
-        const int row = ui->tableWidget->currentRow();
+        const int row = this->ui->tableWidget->currentRow();
+        const QTableWidgetItem *descriptionItem = this->ui->tableWidget->item(row, 0);
+        const QString description = descriptionItem->text();
+        const QTableWidgetItem *startDateItem = this->ui->tableWidget->item(row, 1);
+        const QVariant startDateVariant = startDateItem->data(Qt::UserRole + 1); // Usa un UserRole appropriato
+        const QDateTime startDate = startDateVariant.toDateTime();
 
-        if (row != -1) {
-            this->controller->removeActivityByIndex(row);
-        }
+
+        qDebug() << "description:" << description;
+        qDebug() << "start time:" << startDate;
+        this->controller->removeActivityByIndex(description, startDate);
     }
 }
 

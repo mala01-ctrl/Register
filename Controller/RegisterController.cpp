@@ -12,12 +12,19 @@ int RegisterController::addActivity(const QString &description, const QDateTime 
         return INVALID_DESCRIPTION;
     }
     Activity a(description, start, end);
-    reg->addActivity(a);
+    if (this->reg->getActivities().isEmpty()) {
+        this->reg->addActivity(a);
+        return ERROR_NONE;
+    }
+    const int position = this->reg->findActivity(description, start);
+    if (position >= 0)
+        return DUPLICATED_ACTIVITY;
+    this->reg->addActivity(a);
     return ERROR_NONE;
 }
 
-void RegisterController::removeActivityByIndex(int index) const {
-    reg->removeActivity(index);
+void RegisterController::removeActivityByIndex(const QString &description, const QDateTime &start) const {
+    reg->removeActivity(description, start);
 }
 
 void RegisterController::clearAllActivities() const {
