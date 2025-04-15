@@ -2,8 +2,8 @@
 // Created by Lorenzo Malavolti on 13/04/2025.
 //
 
-#include "gtest/gtest.h"
-#include "../Model/Activity.h"
+#include "../lib/googletest/googletest/include/gtest/gtest.h"
+#include "../../Model/Activity.h"
 #include <QDateTime>
 #include <QString>
 
@@ -27,4 +27,20 @@ TEST(ActivityTest, ConstructorAndGetter) {
     ASSERT_EQ(activity.getDescription(), description);
     ASSERT_EQ(activity.getStartDateTime(), start);
     ASSERT_EQ(activity.getEndDateTime(), end);
+}
+
+TEST(ActivityTest, copyConstructor) {
+    const QDateTime start = QDateTime::fromString("2025-04-13 10:00", "yyyy-MM-dd HH:mm");
+    const QDateTime end = QDateTime::fromString("2025-04-13 12:00", "yyyy-MM-dd HH:mm");
+
+    const Activity activity("Test Activity", start, end);
+
+    const Activity& copyActivity(activity);
+
+    ASSERT_EQ(copyActivity.getDescription(), activity.getDescription());
+
+    ASSERT_EQ(copyActivity.getStartDateTime(), start);
+
+    ASSERT_EQ(copyActivity.getEndDateTime(), end);
+
 }

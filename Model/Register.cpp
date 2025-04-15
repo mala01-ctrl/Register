@@ -30,7 +30,7 @@ void Register::clearAll() {
         delete activity;
     }
     this->activities.clear();
-    this->filterActivities(QDate());
+    this->filterActivities(QDate());  //Questo forse non serve
 }
 
 void Register::filterActivities(const QDate &date) {

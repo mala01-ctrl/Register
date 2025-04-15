@@ -23,6 +23,7 @@ int RegisterController::addActivity(const QString &description, const QDateTime 
     return ERROR_NONE;
 }
 
+//TODO da rinominare questo metodo
 int RegisterController::removeActivityByIndex(const QString &description, const QDateTime &start) const {
     const bool status = this->reg->removeActivity(description, start);
     return status ? ERROR_NONE : UNEXPECTED_ERROR;
