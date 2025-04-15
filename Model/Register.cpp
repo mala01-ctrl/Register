@@ -61,3 +61,7 @@ int Register::findActivity(const QString &description, const QDateTime &start) {
     }
     return -1;
 }
+
+Register::~Register() {
+    this->clearAll();
+}

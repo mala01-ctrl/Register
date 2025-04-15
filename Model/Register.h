@@ -40,6 +40,8 @@ public:
         }
     }
 
+    ~Register();
+
     QVector<Activity *> getActivities() const {
         return filteredActivities;
     }
