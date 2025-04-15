@@ -28,7 +28,6 @@ public:
 
     void onItemSelectionChanged() const;
 
-    QMessageBox::StandardButton openMessageBox();
 
 private slots:
     void on_btnAdd_clicked();
@@ -42,6 +41,10 @@ private slots:
     void on_btnReset_clicked();
 
 private:
+    QMessageBox::StandardButton openMessageBox(const QString &text);
+
+    void enableBtnClearAll() const;
+
     Ui::MainWindow *ui;
     Register *reg;
     RegisterController *controller;

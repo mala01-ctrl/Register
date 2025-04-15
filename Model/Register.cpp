@@ -15,6 +15,10 @@ bool Register::removeActivity(const QString &description, const QDateTime &start
         return false;
 
     const Activity *activityToRemove = this->activities.at(position);
+
+    if (activityToRemove == nullptr)
+        return false;
+
     this->activities.removeAt(position);
     delete activityToRemove;
     this->filterActivities(QDate());
@@ -52,8 +56,6 @@ void Register::resetAllActivities() {
 
 int Register::findActivity(const QString &description, const QDateTime &start) {
     for (int i = 0; i < this->activities.size(); i++) {
-        qDebug() << "Comparing description:" << this->activities[i]->getDescription() << "with:" << description;
-        qDebug() << "Comparing start time:" << this->activities[i]->getStartDateTime() << "with:" << start;
         if (QString::compare(this->activities[i]->getDescription(), description) == 0 && this->activities[i]->
             getStartDateTime() == start) {
             return i;

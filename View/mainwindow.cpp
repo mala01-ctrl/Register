@@ -28,6 +28,8 @@ MainWindow::MainWindow(Register *reg, RegisterController *controller, QWidget *p
 
     this->ui->btnClear->setEnabled(false);
 
+    this->ui->btnClearAll->setEnabled(false);
+
     //Connessione del segnale di selezione della riga
     this->connect(ui->tableWidget, &QTableWidget::itemSelectionChanged, this, &MainWindow::onItemSelectionChanged);
 }
@@ -47,24 +49,36 @@ void MainWindow::on_btnAdd_clicked() {
 
     if (errorCode == RegisterController::ERROR_NONE) {
         this->ui->txtDescription->clear();
-    } else if (errorCode == RegisterController::INVALID_DESCRIPTION) {
-        QMessageBox::warning(this, "Errore", "La descrizione non può essere vuota");
-    } else if (errorCode == RegisterController::INVALID_DATE_RANGE) {
-        QMessageBox::warning(this, "Errore", "La data di inizio deve essere minore della data di fine");
-    } else if (errorCode == RegisterController::DUPLICATED_ACTIVITY) {
-        QMessageBox::warning(this, "Errore", "Esiste già un'attività con lo stesso nome e data");
+        return;
     }
+
+    QString errorMessage = "";
+    if (errorCode == RegisterController::INVALID_DESCRIPTION) {
+        errorMessage = "La descrizione non può essere vuota";
+    } else if (errorCode == RegisterController::INVALID_DATE_RANGE) {
+        errorMessage = "La data di inizio deve essere minore della data di fine";
+    } else if (errorCode == RegisterController::DUPLICATED_ACTIVITY) {
+        errorMessage = "Esiste già un'attività con lo stesso nome e data";
+    }
+    QMessageBox::warning(this, "Errore", errorMessage);
 }
 
 void MainWindow::update() {
+    //Disabilito l'ordinamento della tabella
     const bool sortingEnabled = this->ui->tableWidget->isSortingEnabled();
     this->ui->tableWidget->setSortingEnabled(false);
-    QVector<Activity *> activities = this->reg->getActivities();
+
+    //Abilto e disabilito il btnClearAll in base ai dati della tabella
+    this->enableBtnClearAll();
+
+    //Rimuovo gli elementi in tabella
     this->ui->tableWidget->clearContents();
+
+    QVector<Activity *> activities = this->reg->getActivities();
     this->ui->tableWidget->setRowCount(activities.size()); // Imposta il numero di righe
 
     for (int i = 0; i < activities.size(); i++) {
-        const Activity* activity = activities[i];
+        const Activity *activity = activities[i];
         const QDateTime &startDateTime = activity->getStartDateTime();
         const QDateTime &endDateTime = activity->getEndDateTime();
 
@@ -74,6 +88,8 @@ void MainWindow::update() {
         this->ui->tableWidget->setItem(i, 1, startDateItem);
         this->ui->tableWidget->setItem(i, 2, new QTableWidgetItem(endDateTime.toString("dd/MM/yyyy hh:mm")));
     }
+
+    //Riabilito l'ordinamento in tabella
     this->ui->tableWidget->setSortingEnabled(sortingEnabled);
 }
 
@@ -84,22 +100,22 @@ void MainWindow::onItemSelectionChanged() const {
         this->ui->btnClear->setEnabled(true);
 }
 
-QMessageBox::StandardButton MainWindow::openMessageBox() {
+QMessageBox::StandardButton MainWindow::openMessageBox(const QString &text) {
     // Mostra una finestra di dialogo di conferma
-    QMessageBox::StandardButton reply = QMessageBox::question(
+    const QMessageBox::StandardButton reply = QMessageBox::question(
         this,
         "Conferma eliminazione",
-        "Sei sicuro di voler eliminare tutte le attività?",
-        QMessageBox::Yes | QMessageBox::No
+        text,
+        QMessageBox::Ok | QMessageBox::No
     );
 
     return reply;
 }
 
 void MainWindow::on_btnClear_clicked() {
-    QMessageBox::StandardButton reply = this->openMessageBox();
+    QMessageBox::StandardButton reply = this->openMessageBox("Vuoi eliminare questa attività?");
 
-    if (reply == QMessageBox::Yes) {
+    if (reply == QMessageBox::Ok) {
         const int row = this->ui->tableWidget->currentRow();
         const QTableWidgetItem *descriptionItem = this->ui->tableWidget->item(row, 0);
         const QString description = descriptionItem->text();
@@ -107,17 +123,20 @@ void MainWindow::on_btnClear_clicked() {
         const QVariant startDateVariant = startDateItem->data(Qt::UserRole + 1); // Usa un UserRole appropriato
         const QDateTime startDate = startDateVariant.toDateTime();
 
-        this->controller->removeActivityByIndex(description, startDate);
+        const int errorCode = this->controller->removeActivityByIndex(description, startDate);
+        if (errorCode == RegisterController::UNEXPECTED_ERROR)
+            QMessageBox::warning(this, "Errore", "Si è verificato un errore");
     }
 }
 
 void MainWindow::on_btnClearAll_clicked() {
     // Mostra una finestra di dialogo di conferma
-    QMessageBox::StandardButton reply = this->openMessageBox();
+    QMessageBox::StandardButton reply = this->openMessageBox("Sei sicuro di voler eliminare tutte le attività?");
 
-    // Se l'utente clicca su "Yes", esegui l'eliminazione
-    if (reply == QMessageBox::Yes) {
+    // Se l'utente clicca su "Ok", esegui l'eliminazione
+    if (reply == QMessageBox::Ok) {
         this->controller->clearAllActivities();
+
     }
 }
 
@@ -131,4 +150,12 @@ void MainWindow::on_btnReset_clicked() {
     this->reg->resetAllActivities();
     this->ui->dateFilter->clear();
     this->ui->btnReset->setVisible(false);
+}
+
+void MainWindow::enableBtnClearAll() const {
+    QVector<Activity *> activities = this->reg->getActivities();
+    if (activities.isEmpty())
+        this->ui->btnClearAll->setEnabled(false);
+    else
+        this->ui->btnClearAll->setEnabled(true);
 }

@@ -23,18 +23,19 @@ int RegisterController::addActivity(const QString &description, const QDateTime 
     return ERROR_NONE;
 }
 
-void RegisterController::removeActivityByIndex(const QString &description, const QDateTime &start) const {
-    reg->removeActivity(description, start);
+int RegisterController::removeActivityByIndex(const QString &description, const QDateTime &start) const {
+    const bool status = this->reg->removeActivity(description, start);
+    return status ? ERROR_NONE : UNEXPECTED_ERROR;
 }
 
 void RegisterController::clearAllActivities() const {
-    if (reg->getActivities().size() > 0) {
+    if (this->reg->getActivities().size() > 0) {
         this->reg->clearAll();
     }
 }
 
 void RegisterController::filterAllActivities(const QDate &date) const {
-    if (reg->getActivities().size() > 0) {
+    if (this->reg->getActivities().size() > 0) {
         this->reg->filterActivities(date);
     }
 }
