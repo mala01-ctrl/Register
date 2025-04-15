@@ -13,6 +13,8 @@ class Activity {
 public:
     Activity(const QString &description, const QDateTime &startDateTime, const QDateTime &endDateTime);
 
+    Activity(const Activity &activity) = default;
+
     QString getDescription() const {
         return description;
     }

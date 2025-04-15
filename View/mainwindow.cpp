@@ -57,18 +57,18 @@ void MainWindow::on_btnAdd_clicked() {
 }
 
 void MainWindow::update() {
-    bool sortingEnabled = this->ui->tableWidget->isSortingEnabled();
+    const bool sortingEnabled = this->ui->tableWidget->isSortingEnabled();
     this->ui->tableWidget->setSortingEnabled(false);
-    QVector<Activity> activities = this->reg->getActivities();
+    QVector<Activity *> activities = this->reg->getActivities();
     this->ui->tableWidget->clearContents();
     this->ui->tableWidget->setRowCount(activities.size()); // Imposta il numero di righe
 
     for (int i = 0; i < activities.size(); i++) {
-        const Activity &activity = activities[i];
-        const QDateTime &startDateTime = activity.getStartDateTime();
-        const QDateTime &endDateTime = activity.getEndDateTime();
+        const Activity* activity = activities[i];
+        const QDateTime &startDateTime = activity->getStartDateTime();
+        const QDateTime &endDateTime = activity->getEndDateTime();
 
-        this->ui->tableWidget->setItem(i, 0, new QTableWidgetItem(activity.getDescription()));
+        this->ui->tableWidget->setItem(i, 0, new QTableWidgetItem(activity->getDescription()));
         QTableWidgetItem *startDateItem = new QTableWidgetItem(startDateTime.toString("dd/MM/yyyy hh:mm"));
         startDateItem->setData(Qt::UserRole + 1, startDateTime);
         this->ui->tableWidget->setItem(i, 1, startDateItem);
@@ -107,9 +107,6 @@ void MainWindow::on_btnClear_clicked() {
         const QVariant startDateVariant = startDateItem->data(Qt::UserRole + 1); // Usa un UserRole appropriato
         const QDateTime startDate = startDateVariant.toDateTime();
 
-
-        qDebug() << "description:" << description;
-        qDebug() << "start time:" << startDate;
         this->controller->removeActivityByIndex(description, startDate);
     }
 }
