@@ -24,9 +24,7 @@ set(PROJECT_SOURCES
         Model/Activity.h
         Model/Register.cpp
         Model/Register.h
-        Interfaces/Observer.cpp
         Interfaces/Observer.h
-        Interfaces/Subject.cpp
         Interfaces/Subject.h
         Controller/RegisterController.cpp
         Controller/RegisterController.h
@@ -35,9 +33,8 @@ set(PROJECT_SOURCES
 set(CORE_SOURCES
         Model/Activity.cpp
         Model/Register.cpp
-        Interfaces/Observer.cpp
-        Interfaces/Subject.cpp
         Controller/RegisterController.cpp
+        Interfaces/Observer.h
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
