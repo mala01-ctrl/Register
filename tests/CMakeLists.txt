@@ -13,6 +13,7 @@ set(TEST_SOURCE_FILES runAllTests.cpp
         Model/ActivityTest.cpp
         Model/RegisterSuite.cpp
         Controller/RegisterControllerSuite.cpp
+        Interfaces/ObserverTest.cpp
 )
 
 add_executable(runRegisterTests ${TEST_SOURCE_FILES})
