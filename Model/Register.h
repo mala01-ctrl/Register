@@ -42,13 +42,13 @@ public:
 
     ~Register();
 
-    QVector<Activity *> getActivities() const {
+    QVector<Activity> getActivities() const {
         return filteredActivities;
     }
 
 private:
-    QVector<Activity *> activities;
-    QVector<Activity *> filteredActivities;
+    QVector<Activity> activities;
+    QVector<Activity> filteredActivities;
     std::list<Observer *> observers;
 
 };

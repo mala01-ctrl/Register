@@ -74,15 +74,15 @@ void MainWindow::update() {
     //Rimuovo gli elementi in tabella
     this->ui->tableWidget->clearContents();
 
-    QVector<Activity *> activities = this->reg->getActivities();
+    QVector<Activity> activities = this->reg->getActivities();
     this->ui->tableWidget->setRowCount(activities.size()); // Imposta il numero di righe
 
     for (int i = 0; i < activities.size(); i++) {
-        const Activity *activity = activities[i];
-        const QDateTime &startDateTime = activity->getStartDateTime();
-        const QDateTime &endDateTime = activity->getEndDateTime();
+        const Activity& activity = activities[i];
+        const QDateTime &startDateTime = activity.getStartDateTime();
+        const QDateTime &endDateTime = activity.getEndDateTime();
 
-        this->ui->tableWidget->setItem(i, 0, new QTableWidgetItem(activity->getDescription()));
+        this->ui->tableWidget->setItem(i, 0, new QTableWidgetItem(activity.getDescription()));
         QTableWidgetItem *startDateItem = new QTableWidgetItem(startDateTime.toString("dd/MM/yyyy hh:mm"));
         startDateItem->setData(Qt::UserRole + 1, startDateTime);
         this->ui->tableWidget->setItem(i, 1, startDateItem);
@@ -153,7 +153,7 @@ void MainWindow::on_btnReset_clicked() {
 }
 
 void MainWindow::enableBtnClearAll() const {
-    QVector<Activity *> activities = this->reg->getActivities();
+    QVector<Activity> activities = this->reg->getActivities();
     if (activities.isEmpty())
         this->ui->btnClearAll->setEnabled(false);
     else

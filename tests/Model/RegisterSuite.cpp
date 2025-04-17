@@ -28,7 +28,7 @@ TEST_F(RegisterSuite, addActivity) {
     reg.addActivity(activity1);
 
     ASSERT_EQ(reg.getActivities().size(), 2);
-    ASSERT_EQ(reg.getActivities()[1]->getDescription(), "Workout");
+    ASSERT_EQ(reg.getActivities()[1].getDescription(), "Workout");
 }
 
 TEST_F(RegisterSuite, removeActivity) {

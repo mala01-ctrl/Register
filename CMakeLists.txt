@@ -38,6 +38,8 @@ set(CORE_SOURCES
         Interfaces/Observer.cpp
         Interfaces/Subject.cpp
         Controller/RegisterController.cpp
+        View/mainwindow.h
+        View/mainwindow.cpp
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
@@ -64,7 +66,7 @@ else()
 endif()
 
 add_library(core ${CORE_SOURCES})
-target_link_libraries(core PRIVATE Qt${QT_VERSION_MAJOR}::Core)
+target_link_libraries(core PRIVATE Qt${QT_VERSION_MAJOR}::Core Qt${QT_VERSION_MAJOR}::Widgets)
 
 target_link_libraries(RegisterQt PRIVATE Qt${QT_VERSION_MAJOR}::Widgets Qt${QT_VERSION_MAJOR}::Core core)
 
