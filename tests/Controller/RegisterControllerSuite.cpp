@@ -63,7 +63,7 @@ TEST_F(RegisterControllerSuite, removeActivityByIndexSuccessfull) {
     const QString description = "meeting";
     const QDateTime start = QDateTime::fromString("2025-04-13 10:00", "yyyy-MM-dd HH:mm");
 
-    const int errorCode = this->regController->removeActivityByIndex(description, start);
+    const int errorCode = this->regController->removeActivity(description, start);
 
     ASSERT_EQ(errorCode, 0);
 }
@@ -72,7 +72,7 @@ TEST_F(RegisterControllerSuite, removeActivityByIndexFailure) {
     const QString description = "Workout";
     const QDateTime start = QDateTime::fromString("2025-04-13 10:00", "yyyy-MM-dd HH:mm");
 
-    const int errorCode = this->regController->removeActivityByIndex(description, start);
+    const int errorCode = this->regController->removeActivity(description, start);
 
     ASSERT_EQ(errorCode, 4);
 }

@@ -11,8 +11,8 @@ int RegisterController::addActivity(const QString &description, const QDateTime 
     if (description.isEmpty()) {
         return INVALID_DESCRIPTION;
     }
-    Activity a(description, start, end);
-    if (this->reg->getActivities().isEmpty()) {
+    const Activity a(description, start, end);
+    if (this->reg->getFilterActivities().isEmpty()) {
         this->reg->addActivity(a);
         return ERROR_NONE;
     }
@@ -23,20 +23,19 @@ int RegisterController::addActivity(const QString &description, const QDateTime 
     return ERROR_NONE;
 }
 
-//TODO da rinominare questo metodo
-int RegisterController::removeActivityByIndex(const QString &description, const QDateTime &start) const {
+int RegisterController::removeActivity(const QString &description, const QDateTime &start) const {
     const bool status = this->reg->removeActivity(description, start);
     return status ? ERROR_NONE : UNEXPECTED_ERROR;
 }
 
 void RegisterController::clearAllActivities() const {
-    if (this->reg->getActivities().size() > 0) {
+    if (!this->reg->getFilterActivities().isEmpty()) {
         this->reg->clearAll();
     }
 }
 
 void RegisterController::filterAllActivities(const QDate &date) const {
-    if (this->reg->getActivities().size() > 0) {
+    if (!this->reg->getFilterActivities().isEmpty()) {
         this->reg->filterActivities(date);
     }
 }

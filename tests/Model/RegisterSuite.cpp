@@ -23,12 +23,12 @@ TEST_F(RegisterSuite, addActivity) {
     const QDateTime end = QDateTime::fromString("2025-04-13 12:00", "yyyy-MM-dd HH:mm");
     const Activity activity1("Workout", start, end);
 
-    ASSERT_EQ(reg.getActivities().size(), 1);
+    ASSERT_EQ(reg.getFilterActivities().size(), 1);
 
     reg.addActivity(activity1);
 
-    ASSERT_EQ(reg.getActivities().size(), 2);
-    ASSERT_EQ(reg.getActivities()[1].getDescription(), "Workout");
+    ASSERT_EQ(reg.getFilterActivities().size(), 2);
+    ASSERT_EQ(reg.getFilterActivities()[1].getDescription(), "Workout");
 }
 
 TEST_F(RegisterSuite, removeActivity) {
@@ -36,12 +36,12 @@ TEST_F(RegisterSuite, removeActivity) {
     const QString description = "meeting";
 
     ASSERT_TRUE(reg.removeActivity(description, start));
-    ASSERT_EQ(reg.getActivities().size(), 0);
+    ASSERT_EQ(reg.getFilterActivities().size(), 0);
 }
 
 TEST_F(RegisterSuite, clearAll) {
     reg.clearAll();
-    ASSERT_EQ(reg.getActivities().size(), 0);
+    ASSERT_EQ(reg.getFilterActivities().size(), 0);
 }
 
 TEST_F(RegisterSuite, filterActivities) {
@@ -50,19 +50,19 @@ TEST_F(RegisterSuite, filterActivities) {
 
     reg.filterActivities(start);
 
-    ASSERT_EQ(reg.getActivities().size(), 1);
+    ASSERT_EQ(reg.getFilterActivities().size(), 1);
 
     //Applico filtro che mi svuota le attività
     start = start.addDays(1);
 
     reg.filterActivities(start);
 
-    ASSERT_EQ(reg.getActivities().size(), 0);
+    ASSERT_EQ(reg.getFilterActivities().size(), 0);
 
     //Applico filtro con data non valida
     reg.filterActivities(QDate());
 
-    ASSERT_EQ(reg.getActivities().size(), 1);
+    ASSERT_EQ(reg.getFilterActivities().size(), 1);
 }
 
 TEST_F(RegisterSuite, resetAllActivities) {
@@ -72,13 +72,13 @@ TEST_F(RegisterSuite, resetAllActivities) {
     reg.filterActivities(start);
 
     //Verifico che sia vuoto
-    ASSERT_EQ(reg.getActivities().size(), 0);
+    ASSERT_EQ(reg.getFilterActivities().size(), 0);
 
     reg.resetAllActivities();
 
     //Verifico che si sia ripopolato
 
-    ASSERT_EQ(reg.getActivities().size(), 1);
+    ASSERT_EQ(reg.getFilterActivities().size(), 1);
 }
 
 TEST_F(RegisterSuite, findActivity) {

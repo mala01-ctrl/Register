@@ -4,8 +4,5 @@
 
 #include "Activity.h"
 
-Activity::Activity(const QString &description, const QDateTime& startDateTime, const QDateTime& endDateTime) {
-    this->description = description;
-    this->startDateTime = startDateTime;
-    this->endDateTime = endDateTime;
+Activity::Activity(const QString &description, const QDateTime& startDateTime, const QDateTime& endDateTime) : description(description), startDateTime(startDateTime), endDateTime(endDateTime) {
 }

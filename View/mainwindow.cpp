@@ -16,18 +16,20 @@ MainWindow::MainWindow(Register *reg, RegisterController *controller, QWidget *p
     this->reg->addObserver(this);
     this->controller = controller;
 
+    //Impostazione di valori di default per i datetime
     const QDateTime now = QDateTime::currentDateTime();
     this->ui->startTime->setDateTime(now);
     this->ui->endTime->setDateTime(now.addSecs(3600));
     this->ui->tableWidget->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
 
-
+    //Valore di default per filtro data
     this->ui->dateFilter->setDate(QDate::currentDate());
+
     //Inizialmente il pulsante di reset è nascosto
     this->ui->btnReset->setVisible(false);
 
+    //Pulsanti di rimozione disabilitati
     this->ui->btnClear->setEnabled(false);
-
     this->ui->btnClearAll->setEnabled(false);
 
     //Connessione del segnale di selezione della riga
@@ -74,18 +76,18 @@ void MainWindow::update() {
     //Rimuovo gli elementi in tabella
     this->ui->tableWidget->clearContents();
 
-    QVector<Activity> activities = this->reg->getActivities();
-    this->ui->tableWidget->setRowCount(activities.size()); // Imposta il numero di righe
+    QVector<Activity> activities = this->reg->getFilterActivities();
+    this->ui->tableWidget->setRowCount(static_cast<int>(activities.size())); // Imposta il numero di righe
 
     for (int i = 0; i < activities.size(); i++) {
-        const Activity& activity = activities[i];
+        const Activity &activity = activities[i];
         const QDateTime &startDateTime = activity.getStartDateTime();
         const QDateTime &endDateTime = activity.getEndDateTime();
 
         this->ui->tableWidget->setItem(i, 0, new QTableWidgetItem(activity.getDescription()));
-        QTableWidgetItem *startDateItem = new QTableWidgetItem(startDateTime.toString("dd/MM/yyyy hh:mm"));
-        startDateItem->setData(Qt::UserRole + 1, startDateTime);
-        this->ui->tableWidget->setItem(i, 1, startDateItem);
+        QTableWidgetItem startDateItemWidget(startDateTime.toString("dd/MM/yyyy hh:mm"));
+        startDateItemWidget.setData(Qt::UserRole + 1, startDateTime);
+        this->ui->tableWidget->setItem(i, 1, new QTableWidgetItem(startDateItemWidget));
         this->ui->tableWidget->setItem(i, 2, new QTableWidgetItem(endDateTime.toString("dd/MM/yyyy hh:mm")));
     }
 
@@ -123,7 +125,7 @@ void MainWindow::on_btnClear_clicked() {
         const QVariant startDateVariant = startDateItem->data(Qt::UserRole + 1); // Usa un UserRole appropriato
         const QDateTime startDate = startDateVariant.toDateTime();
 
-        const int errorCode = this->controller->removeActivityByIndex(description, startDate);
+        const int errorCode = this->controller->removeActivity(description, startDate);
         if (errorCode == RegisterController::UNEXPECTED_ERROR)
             QMessageBox::warning(this, "Errore", "Si è verificato un errore");
     }
@@ -136,25 +138,23 @@ void MainWindow::on_btnClearAll_clicked() {
     // Se l'utente clicca su "Ok", esegui l'eliminazione
     if (reply == QMessageBox::Ok) {
         this->controller->clearAllActivities();
-
     }
 }
 
-void MainWindow::on_btnFilter_clicked() {
-    QDate filterDate = ui->dateFilter->date();
+void MainWindow::on_btnFilter_clicked() const {
+    const QDate filterDate = ui->dateFilter->date();
     this->controller->filterAllActivities(filterDate);
     this->ui->btnReset->setVisible(true);
 }
 
-void MainWindow::on_btnReset_clicked() {
+void MainWindow::on_btnReset_clicked() const {
     this->reg->resetAllActivities();
     this->ui->dateFilter->clear();
     this->ui->btnReset->setVisible(false);
 }
 
 void MainWindow::enableBtnClearAll() const {
-    QVector<Activity> activities = this->reg->getActivities();
-    if (activities.isEmpty())
+    if (this->reg->getFilterActivities().isEmpty())
         this->ui->btnClearAll->setEnabled(false);
     else
         this->ui->btnClearAll->setEnabled(true);
