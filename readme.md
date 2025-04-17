@@ -1,4 +1,4 @@
-#Registro delle attività
+# Registro delle attività
 
 >Elaborato del corso "Laboratorio di programmazione"
 
