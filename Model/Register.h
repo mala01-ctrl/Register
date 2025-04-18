@@ -5,6 +5,7 @@
 #ifndef REGISTER_H
 #define REGISTER_H
 #include <QVector>
+#include <memory>
 
 #include "Activity.h"
 #include "../Interfaces/Subject.h"
@@ -68,20 +69,16 @@ public:
         }
     }
 
-    ~Register() override;
-
     /**
      * Metodo get per rendere accessibili le attività filtrate
      * @return Attività filtrate
      */
-    const QVector<Activity>& getFilterActivities() const {
-        return filteredActivities;
-    }
+    QVector<std::shared_ptr<Activity>> getActivities() const;
 
 private:
-    QVector<Activity> activities;
-    QVector<Activity> filteredActivities;
+    QVector<std::shared_ptr<Activity>> activities;
     std::list<Observer *> observers;
+    QDate currentFilterDate;
 };
 
 

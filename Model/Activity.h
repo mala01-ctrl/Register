@@ -18,6 +18,10 @@ public:
      * @param description Descrizione dell'attività
      * @param startDateTime Data e ora di inizio attività
      * @param endDateTime Data e ora di fine attività
+     * @throws std::invalid_argument Se:
+     *         - la descrizione è vuota o composta solo da spazi;
+     *         - una delle date non è valida;
+     *         - la data di fine è precedente a quella di inizio.
      */
     Activity(const QString &description, const QDateTime &startDateTime, const QDateTime &endDateTime);
 
@@ -25,7 +29,7 @@ public:
      * Costruttore di copia
      * @param activity Attività da copiare
      */
-    Activity(const Activity &activity) = default;
+    Activity(const Activity &activity);
 
     /**
      * Metodo get per la descrizione

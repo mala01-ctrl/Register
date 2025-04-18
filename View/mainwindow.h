@@ -61,7 +61,7 @@ private slots:
     /**
      * Filtraggio delle attività
      */
-    void on_btnFilter_clicked() const;
+    void on_btnFilter_clicked();
 
     /**
      * Ripristino del filtro
@@ -79,7 +79,8 @@ private:
     /**
      * Abilita o disabilita il btnClearAll in base al numero di attività nel registro
      */
-    void enableBtnClearAll() const;
+    void enableBtnActions() const;
+
 
     Ui::MainWindow *ui;
     Register *reg;

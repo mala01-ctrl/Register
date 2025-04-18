@@ -34,6 +34,11 @@ public:
      */
     static constexpr int UNEXPECTED_ERROR = 4;
 
+    /**
+     * Data non valida
+     */
+    static constexpr int INVALID_DATE = 5;
+
 
     /**
      * Costruttore di classe
@@ -67,7 +72,7 @@ public:
      * Filtraggio attività del registro in base a una data
      * @param date Data di inizio
      */
-    void filterAllActivities(const QDate &date) const;
+    int filterAllActivities(const QDate &date) const;
 
     /**
      * Ripristino del filtro precedente

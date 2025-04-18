@@ -4,23 +4,29 @@
 
 #include "RegisterController.h"
 
+#include "../Exceptions/InvalidDateException.h"
+#include "../Exceptions/InvalidDateRangeException.h"
+#include "../Exceptions/InvalidDescriptionException.h"
+
 int RegisterController::addActivity(const QString &description, const QDateTime &start, const QDateTime &end) const {
-    if (start >= end) {
-        return INVALID_DATE_RANGE;
-    }
-    if (description.isEmpty()) {
-        return INVALID_DESCRIPTION;
-    }
-    const Activity a(description, start, end);
-    if (this->reg->getFilterActivities().isEmpty()) {
+    try {
+        const Activity a(description, start, end);
+        if (this->reg->getActivities().isEmpty()) {
+            this->reg->addActivity(a);
+            return ERROR_NONE;
+        }
+        const int position = this->reg->findActivity(description, start);
+        if (position >= 0)
+            return DUPLICATED_ACTIVITY;
         this->reg->addActivity(a);
         return ERROR_NONE;
+    } catch (const InvalidDescriptionException &) {
+        return INVALID_DESCRIPTION;
+    } catch (const InvalidDateException &) {
+        return INVALID_DATE;      //Quando una delle due date passate non è valida
+    } catch (const InvalidDateRangeException &) {
+        return INVALID_DATE_RANGE;
     }
-    const int position = this->reg->findActivity(description, start);
-    if (position >= 0)
-        return DUPLICATED_ACTIVITY;
-    this->reg->addActivity(a);
-    return ERROR_NONE;
 }
 
 int RegisterController::removeActivity(const QString &description, const QDateTime &start) const {
@@ -29,14 +35,15 @@ int RegisterController::removeActivity(const QString &description, const QDateTi
 }
 
 void RegisterController::clearAllActivities() const {
-    if (!this->reg->getFilterActivities().isEmpty()) {
-        this->reg->clearAll();
-    }
+    this->reg->clearAll();
 }
 
-void RegisterController::filterAllActivities(const QDate &date) const {
-    if (!this->reg->getFilterActivities().isEmpty()) {
+int RegisterController::filterAllActivities(const QDate &date) const {
+    try {
         this->reg->filterActivities(date);
+        return ERROR_NONE;
+    }catch (const InvalidDateException &) {
+        return INVALID_DATE;
     }
 }
 

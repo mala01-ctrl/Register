@@ -3,53 +3,51 @@
 //
 
 #include "Register.h"
+#include <memory>
+
+#include "../Exceptions/InvalidDateException.h"
 
 void Register::addActivity(const Activity &activity) {
-    this->activities.append(activity);
-    this->filterActivities(QDate());
-}
-
-bool Register::removeActivity(const QString &description, const QDateTime &start) {
-    const int position = this->findActivity(description, start);
-    if (position == -1)
-        return false;
-
-    const Activity activityToRemove = this->activities.at(position);
-
-    this->activities.removeAt(position);
-    this->filterActivities(QDate());
-    return true;
-}
-
-void Register::clearAll() {
-    this->activities.clear();
-    this->filterActivities(QDate());  //Questo forse non serve
-}
-
-void Register::filterActivities(const QDate &date) {
-    this->filteredActivities.clear();
-
-    if (date.isValid()) {
-        for (const Activity& activity: this->activities) {
-            if (activity.getStartDateTime().date() == date) {
-                this->filteredActivities.append(activity);
-            }
-        }
-    } else {
-        this->filteredActivities = this->activities;
-    }
-
+    this->activities.append(std::make_shared<Activity>(activity));
     this->notify();
 }
 
+bool Register::removeActivity(const QString &description, const QDateTime &start) {
+    for (auto it = this->activities.begin(); it != this->activities.end(); ++it) {
+        if ((*it)->getDescription() == description && (*it)->getStartDateTime() == start) {
+            this->activities.erase(it);
+            this->notify();
+            return true;
+        }
+    }
+    return false;
+}
+
+void Register::clearAll() {
+    if (!this->activities.isEmpty()) {
+        this->activities.clear();
+        this->notify();
+    }
+}
+
+void Register::filterActivities(const QDate &date) {
+    if (!date.isValid())
+        throw InvalidDateException();
+
+    if (!this->activities.isEmpty()) {
+        this->currentFilterDate = date;
+        this->notify();
+    }
+}
+
 void Register::resetAllActivities() {
-    this->filteredActivities = this->activities;
+    this->currentFilterDate = QDate();
     this->notify();
 }
 
 int Register::findActivity(const QString &description, const QDateTime &start) {
     for (int i = 0; i < this->activities.size(); i++) {
-        if (QString::compare(this->activities[i].getDescription(), description) == 0 && this->activities[i].
+        if (QString::compare(this->activities[i]->getDescription(), description) == 0 && this->activities[i]->
             getStartDateTime() == start) {
             return i;
         }
@@ -57,6 +55,17 @@ int Register::findActivity(const QString &description, const QDateTime &start) {
     return -1;
 }
 
-Register::~Register() {
-    this->clearAll();
+QVector<std::shared_ptr<Activity>> Register::getActivities() const {
+    //se il filtro non è valido
+    if (!currentFilterDate.isValid()) {
+        return this->activities;
+    }
+    //Quando il filtro è valido
+    QVector<std::shared_ptr<Activity> > filteredActivities;
+    for (const auto &ptr: this->activities) {
+        if (ptr->getStartDateTime().date() == currentFilterDate) {
+            filteredActivities.append(ptr);
+        }
+    }
+    return filteredActivities;
 }

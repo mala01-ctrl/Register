@@ -28,6 +28,9 @@ set(PROJECT_SOURCES
         Interfaces/Subject.h
         Controller/RegisterController.cpp
         Controller/RegisterController.h
+        Exceptions/InvalidDescriptionException.h
+        Exceptions/InvalidDateException.h
+        Exceptions/InvalidDateRangeException.h
 )
 
 set(CORE_SOURCES
@@ -35,6 +38,9 @@ set(CORE_SOURCES
         Model/Register.cpp
         Controller/RegisterController.cpp
         Interfaces/Observer.h
+        Exceptions/InvalidDescriptionException.h
+        Exceptions/InvalidDateException.h
+        Exceptions/InvalidDateRangeException.h
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)

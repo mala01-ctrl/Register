@@ -31,6 +31,11 @@ MainWindow::MainWindow(Register *reg, RegisterController *controller, QWidget *p
     //Pulsanti di rimozione disabilitati
     this->ui->btnClear->setEnabled(false);
     this->ui->btnClearAll->setEnabled(false);
+    this->ui->btnFilter->setEnabled(false);
+
+    //Disabilito l'editor delle celle della tabella
+    this->ui->tableWidget->setEditTriggers(QAbstractItemView::NoEditTriggers);
+
 
     //Connessione del segnale di selezione della riga
     this->connect(ui->tableWidget, &QTableWidget::itemSelectionChanged, this, &MainWindow::onItemSelectionChanged);
@@ -55,12 +60,18 @@ void MainWindow::on_btnAdd_clicked() {
     }
 
     QString errorMessage = "";
-    if (errorCode == RegisterController::INVALID_DESCRIPTION) {
-        errorMessage = "La descrizione non può essere vuota";
-    } else if (errorCode == RegisterController::INVALID_DATE_RANGE) {
-        errorMessage = "La data di inizio deve essere minore della data di fine";
-    } else if (errorCode == RegisterController::DUPLICATED_ACTIVITY) {
-        errorMessage = "Esiste già un'attività con lo stesso nome e data";
+    switch (errorCode) {
+        case RegisterController::INVALID_DESCRIPTION:
+            errorMessage = "La descrizione non può essere vuota";
+            break;
+        case RegisterController::INVALID_DATE_RANGE:
+            errorMessage = "La data di inizio deve essere minore della data di fine";
+            break;
+        case RegisterController::DUPLICATED_ACTIVITY:
+            errorMessage = "Esiste già un'attività con lo stesso nome e data";
+            break;
+        case RegisterController::INVALID_DATE:   //Questi hanno lo stesso messaggio di errore
+        default: errorMessage = "Errore generico.";
     }
     QMessageBox::warning(this, "Errore", errorMessage);
 }
@@ -71,20 +82,21 @@ void MainWindow::update() {
     this->ui->tableWidget->setSortingEnabled(false);
 
     //Abilto e disabilito il btnClearAll in base ai dati della tabella
-    this->enableBtnClearAll();
+    this->enableBtnActions();
 
     //Rimuovo gli elementi in tabella
     this->ui->tableWidget->clearContents();
 
-    QVector<Activity> activities = this->reg->getFilterActivities();
+    //Qui fa la copia, ma viene eliminato quando va fuori di scopo
+    QVector<std::shared_ptr<Activity> > activities = this->reg->getActivities();
     this->ui->tableWidget->setRowCount(static_cast<int>(activities.size())); // Imposta il numero di righe
 
     for (int i = 0; i < activities.size(); i++) {
-        const Activity &activity = activities[i];
-        const QDateTime &startDateTime = activity.getStartDateTime();
-        const QDateTime &endDateTime = activity.getEndDateTime();
+        const auto &activity = activities[i];
+        const QDateTime &startDateTime = activity->getStartDateTime();
+        const QDateTime &endDateTime = activity->getEndDateTime();
 
-        this->ui->tableWidget->setItem(i, 0, new QTableWidgetItem(activity.getDescription()));
+        this->ui->tableWidget->setItem(i, 0, new QTableWidgetItem(activity->getDescription()));
         QTableWidgetItem startDateItemWidget(startDateTime.toString("dd/MM/yyyy hh:mm"));
         startDateItemWidget.setData(Qt::UserRole + 1, startDateTime);
         this->ui->tableWidget->setItem(i, 1, new QTableWidgetItem(startDateItemWidget));
@@ -141,9 +153,13 @@ void MainWindow::on_btnClearAll_clicked() {
     }
 }
 
-void MainWindow::on_btnFilter_clicked() const {
+void MainWindow::on_btnFilter_clicked() {
     const QDate filterDate = ui->dateFilter->date();
-    this->controller->filterAllActivities(filterDate);
+    const int errorCode = this->controller->filterAllActivities(filterDate);
+    if (errorCode == RegisterController::INVALID_DATE_RANGE) {
+        QMessageBox::warning(this, "Errore", "Data non valida");
+        return;
+    }
     this->ui->btnReset->setVisible(true);
 }
 
@@ -153,9 +169,13 @@ void MainWindow::on_btnReset_clicked() const {
     this->ui->btnReset->setVisible(false);
 }
 
-void MainWindow::enableBtnClearAll() const {
-    if (this->reg->getFilterActivities().isEmpty())
+void MainWindow::enableBtnActions() const {
+    if (this->reg->getActivities().isEmpty()) {
         this->ui->btnClearAll->setEnabled(false);
-    else
+        this->ui->btnFilter->setEnabled(false);
+    }
+    else {
         this->ui->btnClearAll->setEnabled(true);
+        this->ui->btnFilter->setEnabled(true);
+    }
 }
